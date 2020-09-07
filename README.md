@@ -1,6 +1,9 @@
 # refactoring-legacy-code-workshop-cpp
 Refactoring Legacy Code Workshop C++ Edition
 
+# C++ Reference
+https://en.cppreference.com/
+
 # Vistual Studio Test for C/C++
 https://docs.microsoft.com/en-us/visualstudio/test/writing-unit-tests-for-c-cpp?view=vs-2017
 https://docs.microsoft.com/en-us/visualstudio/test/how-to-use-google-test-for-cpp?view=vs-2017
