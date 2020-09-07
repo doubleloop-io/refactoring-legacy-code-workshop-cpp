@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TriviaRefactoringKata", "TriviaRefactoringKata\TriviaRefactoringKata.vcxproj", "{9DF994A4-C29F-44C2-9418-64FD32553B7E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TriviaRefactoringKataTests", "TriviaRefactoringKataTests\TriviaRefactoringKataTests.vcxproj", "{A4B742B6-97A0-4726-B98F-0B4A33FFD136}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{9DF994A4-C29F-44C2-9418-64FD32553B7E}.Release|x64.Build.0 = Release|x64
 		{9DF994A4-C29F-44C2-9418-64FD32553B7E}.Release|x86.ActiveCfg = Release|Win32
 		{9DF994A4-C29F-44C2-9418-64FD32553B7E}.Release|x86.Build.0 = Release|Win32
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Debug|x64.ActiveCfg = Debug|x64
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Debug|x64.Build.0 = Debug|x64
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Debug|x86.ActiveCfg = Debug|Win32
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Debug|x86.Build.0 = Debug|Win32
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Release|x64.ActiveCfg = Release|x64
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Release|x64.Build.0 = Release|x64
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Release|x86.ActiveCfg = Release|Win32
+		{A4B742B6-97A0-4726-B98F-0B4A33FFD136}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,12 @@
-﻿#include <stdlib.h>
-#include "Game.h"
+﻿#include "Game.h"
 #include <ctime>
 
 static bool notAWinner;
 
-int main()
+int main(int argc, char *argv[])
 {
 	srand(time(NULL));
+
 	Game aGame;
 
 	aGame.add("Chet");
