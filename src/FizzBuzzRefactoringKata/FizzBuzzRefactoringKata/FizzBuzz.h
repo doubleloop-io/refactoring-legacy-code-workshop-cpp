@@ -12,18 +12,22 @@ public:
 			value = str;
 			return value;
 		}
-		if (number % 5 == 0)
+		else if (number % 5 == 0)
 		{
 			auto str = "Buzz";
 			value = str;
 			return value;
 		}
-		if (number % 3 == 0)
+		else if (number % 3 == 0)
 		{
 			auto str = "Fizz";
 			value = str;
 			return value;
 		}
-		return std::to_string(number);
+
+		if (std::empty(value))
+			return std::to_string(number);
+		else 
+			return value;
 	}
 };
