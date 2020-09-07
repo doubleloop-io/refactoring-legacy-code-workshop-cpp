@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "Game.h"
+#include <string>
 
 bool GameRunner::notAWinner;
 
