@@ -10,19 +10,19 @@ public:
 		{
 			auto str = "FizzBuzz";
 			value = str;
-			return str;
+			return value;
 		}
 		if (number % 5 == 0)
 		{
 			auto str = "Buzz";
 			value = str;
-			return str;
+			return value;
 		}
 		if (number % 3 == 0)
 		{
 			auto str = "Fizz";
 			value = str;
-			return str;
+			return value;
 		}
 		return std::to_string(number);
 	}
