@@ -9,17 +9,17 @@ public:
 		if (number % 15 == 0)
 		{
 			auto str = "FizzBuzz";
-			value = str;
+			value += str;
 		}
 		else if (number % 5 == 0)
 		{
 			auto str = "Buzz";
-			value = str;
+			value += str;
 		}
 		else if (number % 3 == 0)
 		{
 			auto str = "Fizz";
-			value = str;
+			value += str;
 		}
 
 		if (std::empty(value))
