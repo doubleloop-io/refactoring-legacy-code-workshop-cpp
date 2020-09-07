@@ -15,6 +15,7 @@ INSTANTIATE_TEST_CASE_P(
 	FizzBuzzerTests, // -- random name
 	FizzBuzzerTestFixture, // -- fixture name
 	::testing::Values(
+		// --
 		make_tuple(3, "Fizz"),
 		make_tuple(3 * 2, "Fizz"),
 		// --
@@ -23,6 +24,9 @@ INSTANTIATE_TEST_CASE_P(
 		// --
 		make_tuple(15, "FizzBuzz"),
 		make_tuple(15 * 2, "FizzBuzz"),
+		// --
+		make_tuple(7, "Bang"),
+		make_tuple(7 * 2, "Bang"),
 		// --
 		make_tuple(1, "1"),
 		make_tuple(2, "2"),
