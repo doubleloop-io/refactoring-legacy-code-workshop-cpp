@@ -10,6 +10,7 @@ https://docs.microsoft.com/en-us/visualstudio/test/how-to-use-google-test-for-cp
 
 # Google Test
 https://github.com/google/googletest/blob/master/googletest/docs/primer.md
+https://www.sandordargo.com/blog/2019/04/24/parameterized-testing-with-gtest
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
