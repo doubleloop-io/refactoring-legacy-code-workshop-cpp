@@ -1,6 +1,4 @@
 ﻿#include "Game.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 
@@ -8,23 +6,7 @@ using namespace std;
 
 void Game::fill_question_deck()
 {
-	for (int i = 0; i < 50; i++)
-	{
-		ostringstream oss(ostringstream::out);
-		oss << "Pop Question " << i;
-
-		deck.popQuestions_.push_back(oss.str());
-
-		char str[255];
-		sprintf_s(str, "Science Question %d", i);
-		deck.scienceQuestions_.push_back(str);
-
-		char str1[255];
-		sprintf_s(str1, "Sports Question %d", i);
-		deck.sportsQuestions_.push_back(str1);
-
-		deck.rockQuestions_.push_back(deck.createRockQuestion(i));
-	}
+	deck.fill_question_deck();
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){

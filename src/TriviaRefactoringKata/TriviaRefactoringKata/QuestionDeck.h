@@ -12,4 +12,5 @@ public:
 	list<string> rockQuestions_;
 
 	string createRockQuestion(int index);
+	void fill_question_deck();
 };
