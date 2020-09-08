@@ -105,7 +105,14 @@ string Game::currentCategory()
 void Game::fill_questions_for(int count, string category)
 {
 	for (int i = 0; i < count; i++)
-		deck.append_question_for(deck.make_question(category, i), category);
+		deck.append_question_for(make_question(category, i), category);
+}
+
+string Game::make_question(string category, int index)
+{
+	ostringstream oss(ostringstream::out);
+	oss << category << " Question " << index;
+	return oss.str();
 }
 
 bool Game::wasCorrectlyAnswered()
