@@ -7,7 +7,7 @@ class QuestionsCategory
 public:
 	QuestionsCategory(std::string name, std::list<int> places);
 	void append_question(std::string question);
-	bool is_place_on(int place);
+	bool is_placed_on(int place);
 	std::string name();
 	std::string next_question();
 

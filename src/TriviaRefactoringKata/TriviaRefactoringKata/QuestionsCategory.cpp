@@ -11,7 +11,7 @@ void QuestionsCategory::append_question(std::string question)
 	questions_.push_back(question);
 }
 
-bool QuestionsCategory::is_place_on(int place)
+bool QuestionsCategory::is_placed_on(int place)
 {
 	return std::find(places_.begin(), places_.end(), place) != places_.end();
 }
