@@ -86,13 +86,22 @@ string Game::make_question(string category, int index)
 	return oss.str();
 }
 
-void Game::setup_category(int questionsCount, list<int> places, string category)
+void Game::setup_category(list<string> questions, list<int> places, string category)
 {
 	for (auto item : places)
 		deck.place_category_on(item, category);
 
+	for (auto item : questions)
+		deck.append_question_for(item, category);
+}
+
+void Game::setup_category(int questionsCount, list<int> places, string category)
+{
+	list<string> questions;
 	for (int i = 0; i < questionsCount; i++)
-		deck.append_question_for(make_question(category, i), category);
+		questions.push_back(make_question(category, i));
+
+	setup_category(questions, places, category);
 }
 
 bool Game::wasCorrectlyAnswered()
