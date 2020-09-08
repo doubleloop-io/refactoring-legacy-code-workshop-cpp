@@ -8,7 +8,6 @@ using namespace std;
 class QuestionDeck
 {
 public:
-	void fill_question_deck();
 	string make_question(string category, int index);
 	void fill_questions_for(int count, string category);
 

@@ -25,29 +25,6 @@ void QuestionDeck::fill_questions_for(int count, string category)
 		append_question_for(make_question(category, i), category);
 }
 
-void QuestionDeck::fill_question_deck()
-{
-	place_category_on(0, "Pop");
-	place_category_on(4, "Pop");
-	place_category_on(8, "Pop");
-	fill_questions_for(50, "Pop");
-
-	place_category_on(1, "Science");
-	place_category_on(5, "Science");
-	place_category_on(9, "Science");
-	fill_questions_for(50, "Science");
-
-	place_category_on(2, "Sports");
-	place_category_on(6, "Sports");
-	place_category_on(10, "Sports");
-	fill_questions_for(50, "Sports");
-
-	place_category_on(3, "Rock");
-	place_category_on(7, "Rock");
-	place_category_on(11, "Rock");
-	fill_questions_for(50, "Rock");
-}
-
 void QuestionDeck::place_category_on(int place, string category)
 {
 	get_or_add(category).place_on(place);
