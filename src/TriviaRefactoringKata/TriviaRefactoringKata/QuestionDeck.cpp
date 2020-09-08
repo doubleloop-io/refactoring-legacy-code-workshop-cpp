@@ -24,10 +24,10 @@ string QuestionDeck::next_question(list<string>& questions)
 }
 
 QuestionDeck::QuestionDeck()
-	: popPlaces_{ 0, 4, 8 },
-	sciencePlaces_{ 1, 5, 9 },
-	sportsPlaces_{ 2, 6, 10 },
-	rockPlaces_{ 3, 7, 11 }
+	: popPlaces_{0, 4, 8},
+	  sciencePlaces_{1, 5, 9},
+	  sportsPlaces_{2, 6, 10},
+	  rockPlaces_{3, 7, 11}
 {
 }
 
@@ -54,18 +54,10 @@ string QuestionDeck::category_on(int place)
 
 string QuestionDeck::ask_question(string category)
 {
-	string question = "";
-	if (category == "Pop")
-		question = next_question(popQuestions_);
-	if (category == "Science")
-		question = next_question(scienceQuestions_);
-	if (category == "Sports")
-		question = next_question(sportsQuestions_);
-	if (category == "Rock")
-		question = next_question(rockQuestions_);
+	if (category == "Pop") return next_question(popQuestions_);
+	if (category == "Science") return next_question(scienceQuestions_);
+	if (category == "Sports") return next_question(sportsQuestions_);
+	if (category == "Rock") return next_question(rockQuestions_);
 
-	if (empty(question))
-		throw InvalidCategoryException(category);
-
-	return question;
+	throw InvalidCategoryException(category);
 }
