@@ -12,11 +12,23 @@ string QuestionDeck::make_question(string categoryName, int index)
 }
 
 QuestionDeck::QuestionDeck()
-	: pop_("Pop", { 0, 4, 8 }),
-	science_("Science", { 1, 5, 9 }),
-	sports_("Sports", { 2, 6, 10 }),
-	rock_("Rock", { 3, 7, 11 })
+	: pop_("Pop"),
+	science_("Science"),
+	sports_("Sports"),
+	rock_("Rock")
 {
+	pop_.place_on(0);
+	pop_.place_on(4);
+	pop_.place_on(8);
+	science_.place_on(1);
+	science_.place_on(5);
+	science_.place_on(9);
+	sports_.place_on(2);
+	sports_.place_on(6);
+	sports_.place_on(10);
+	rock_.place_on(3);
+	rock_.place_on(7);
+	rock_.place_on(11);
 }
 
 void QuestionDeck::fill_question_deck()

@@ -6,7 +6,6 @@ class QuestionsCategory
 {
 public:
 	QuestionsCategory(std::string name);
-	QuestionsCategory(std::string name, std::list<int> places);
 	std::string name();
 
 	void place_on(int place);

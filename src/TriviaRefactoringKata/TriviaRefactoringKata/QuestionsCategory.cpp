@@ -6,11 +6,6 @@ QuestionsCategory::QuestionsCategory(std::string name)
 {
 }
 
-QuestionsCategory::QuestionsCategory(std::string name, std::list<int> places)
-	:name_(name), places_(places)
-{
-}
-
 void QuestionsCategory::append_question(std::string question)
 {
 	questions_.push_back(question);
