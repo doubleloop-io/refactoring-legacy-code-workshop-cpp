@@ -1,4 +1,5 @@
-﻿#include "QuestionsCategory.h"
+﻿#include <algorithm>
+#include "QuestionsCategory.h"
 
 QuestionsCategory::QuestionsCategory(std::string name, std::list<int> places)
 	:name_(name), places_(places)
@@ -7,19 +8,22 @@ QuestionsCategory::QuestionsCategory(std::string name, std::list<int> places)
 
 void QuestionsCategory::append_question(std::string question)
 {
+	questions_.push_back(question);
 }
 
 bool QuestionsCategory::is_place_on(int place)
 {
-	return false;
+	return std::find(places_.begin(), places_.end(), place) != places_.end();
 }
 
 std::string QuestionsCategory::name()
 {
-	return  "";
+	return name_;
 }
 
 std::string QuestionsCategory::next_question()
 {
-	return  "";
+	std::string question = questions_.front();
+	questions_.pop_front();
+	return question;
 }

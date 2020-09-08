@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <list>
+#include <string>
 
 class QuestionsCategory
 {
@@ -13,4 +14,5 @@ public:
 private:
 	std::string name_;
 	std::list<int> places_;
+	std::list<std::string> questions_;
 };
