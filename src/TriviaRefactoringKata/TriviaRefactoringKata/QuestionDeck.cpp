@@ -1,5 +1,6 @@
 ﻿#include "QuestionDeck.h"
 #include <sstream>
+#include <iostream>
 
 using namespace std;
 
@@ -42,4 +43,28 @@ string QuestionDeck::current_category(int current_place)
 	if (current_place == 6) return "Sports";
 	if (current_place == 10) return "Sports";
 	return "Rock";
+}
+
+void QuestionDeck::ask_question(string current_category)
+{
+	if (current_category == "Pop")
+	{
+		cout << popQuestions_.front() << endl;
+		popQuestions_.pop_front();
+	}
+	if (current_category == "Science")
+	{
+		cout << scienceQuestions_.front() << endl;
+		scienceQuestions_.pop_front();
+	}
+	if (current_category == "Sports")
+	{
+		cout << sportsQuestions_.front() << endl;
+		sportsQuestions_.pop_front();
+	}
+	if (current_category == "Rock")
+	{
+		cout << rockQuestions_.front() << endl;
+		rockQuestions_.pop_front();
+	}
 }
