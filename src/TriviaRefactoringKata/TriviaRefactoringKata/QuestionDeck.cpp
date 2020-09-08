@@ -68,7 +68,5 @@ string QuestionDeck::ask_question(string current_category)
 		question = rockQuestions_.front();
 		rockQuestions_.pop_front();
 	}
-	if (!empty(question))
-		cout << question << endl;
 	return question;
 }
