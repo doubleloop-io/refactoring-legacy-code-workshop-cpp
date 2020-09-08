@@ -10,4 +10,6 @@ public:
 	list<string> scienceQuestions_;
 	list<string> sportsQuestions_;
 	list<string> rockQuestions_;
+
+	string createRockQuestion(int index);
 };

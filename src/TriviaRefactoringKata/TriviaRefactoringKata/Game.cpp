@@ -32,9 +32,7 @@ Game::Game() : places{}, purses{}, currentPlayer(0){
 
 string Game::createRockQuestion(int index)
 {
-	char indexStr[127];
-	sprintf_s(indexStr, "Rock Question %d", index);
-	return indexStr;
+	return deck.createRockQuestion(index);
 }
 
 bool Game::isPlayable()
