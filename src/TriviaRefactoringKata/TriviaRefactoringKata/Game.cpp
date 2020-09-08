@@ -51,7 +51,7 @@ bool Game::add(string playerName) {
 
 int Game::howManyPlayers()
 {
-	return players.size();
+	return (int)players.size();
 }
 
 void Game::roll(int roll)
