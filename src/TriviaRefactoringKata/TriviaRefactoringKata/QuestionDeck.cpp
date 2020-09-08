@@ -1,5 +1,6 @@
 ﻿#include "QuestionDeck.h"
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -23,9 +24,9 @@ void QuestionDeck::fill_question_deck()
 
 string QuestionDeck::current_category(int current_place)
 {
-	if (current_place == 0 ||
-		current_place == 4 ||
-		current_place == 8) return "Pop";
+	std::list<int> popPlaces = {0,4,8};
+	bool popFound = std::find(popPlaces.begin(), popPlaces.end(), current_place) != popPlaces.end();
+	if (popFound) return "Pop";
 
 	if (current_place == 1 ||
 		current_place == 5 ||
