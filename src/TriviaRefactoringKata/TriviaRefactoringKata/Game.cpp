@@ -72,10 +72,8 @@ void Game::roll(int roll)
 
 }
 
-void Game::askQuestion()
+void Game::ask_question(string current_category)
 {
-	auto current_category = currentCategory();
-
 	if (current_category == "Pop")
 	{
 		cout << deck.popQuestions_.front() << endl;
@@ -96,6 +94,12 @@ void Game::askQuestion()
 		cout << deck.rockQuestions_.front() << endl;
 		deck.rockQuestions_.pop_front();
 	}
+}
+
+void Game::askQuestion()
+{
+	auto current_category = currentCategory();
+	ask_question(current_category);
 }
 
 string Game::currentCategory()
