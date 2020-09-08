@@ -13,4 +13,5 @@ public:
 
 	string createRockQuestion(int index);
 	void fill_question_deck();
+	string current_category(int current_place);
 };
