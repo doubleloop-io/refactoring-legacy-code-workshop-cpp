@@ -1,6 +1,7 @@
 ﻿#include "GameRunner.h"
 #include <cstdlib>
 #include <ctime>
+#include <sstream>
 
 bool GameRunner::notAWinner;
 
@@ -37,7 +38,22 @@ void GameRunner::run(int seed)
 
 void GameRunner::setup_category(int questionsCount, std::list<int> places, std::string category, Game& game)
 {
-	game.setup_category(Game::make_questions(category, questionsCount), places, category);
+	game.setup_category(make_questions(category, questionsCount), places, category);
+}
+
+string GameRunner::make_question(string category, int index)
+{
+	ostringstream oss(ostringstream::out);
+	oss << category << " Question " << index;
+	return oss.str();
+}
+
+list<string> GameRunner::make_questions(string category, int count)
+{
+	list<string> questions;
+	for (int i = 0; i < count; i++)
+		questions.push_back(make_question(category, i));
+	return questions;
 }
 
 void GameRunner::run(int argc, char* argv[])

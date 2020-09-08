@@ -79,21 +79,6 @@ string Game::currentCategory()
 	return deck.category_on(current_place);
 }
 
-string Game::make_question(string category, int index)
-{
-	ostringstream oss(ostringstream::out);
-	oss << category << " Question " << index;
-	return oss.str();
-}
-
-list<string> Game::make_questions(string category, int count)
-{
-	list<string> questions;
-	for (int i = 0; i < count; i++)
-		questions.push_back(make_question(category, i));
-	return questions;
-}
-
 void Game::setup_category(list<string> questions, list<int> places, string category)
 {
 	for (auto item : places)

@@ -11,4 +11,6 @@ public:
 private:
 	static bool notAWinner;
 	static void setup_category(int questionsCount, std::list<int> places, std::string category, Game& game);
+	static string make_question(string category, int index);
+	static list<string> make_questions(string category, int count);
 };
