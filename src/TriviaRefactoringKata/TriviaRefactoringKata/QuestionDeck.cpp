@@ -26,12 +26,19 @@ string QuestionDeck::current_category(int current_place)
 	if (current_place == 0) return "Pop";
 	if (current_place == 4) return "Pop";
 	if (current_place == 8) return "Pop";
+
 	if (current_place == 1) return "Science";
 	if (current_place == 5) return "Science";
 	if (current_place == 9) return "Science";
+
 	if (current_place == 2) return "Sports";
 	if (current_place == 6) return "Sports";
 	if (current_place == 10) return "Sports";
+
+	if (current_place == 3) return "Rock";
+	if (current_place == 7) return "Rock";
+	if (current_place == 11) return "Rock";
+
 	return "Rock";
 }
 
