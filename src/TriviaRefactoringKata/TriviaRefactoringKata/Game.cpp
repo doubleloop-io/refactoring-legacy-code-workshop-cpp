@@ -23,16 +23,11 @@ void Game::fill_question_deck()
 		sprintf_s(str1, "Sports Question %d", i);
 		deck.sportsQuestions_.push_back(str1);
 
-		deck.rockQuestions_.push_back(createRockQuestion(i));
+		deck.rockQuestions_.push_back(deck.createRockQuestion(i));
 	}
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){
-}
-
-string Game::createRockQuestion(int index)
-{
-	return deck.createRockQuestion(index);
 }
 
 bool Game::isPlayable()

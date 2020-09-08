@@ -24,7 +24,6 @@ private:
 public:
 	Game();
 	void fill_question_deck();
-	string createRockQuestion(int index);
 	bool isPlayable();
 	bool add(string playerName);
 
