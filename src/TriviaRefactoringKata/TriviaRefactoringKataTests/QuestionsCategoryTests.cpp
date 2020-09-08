@@ -5,7 +5,7 @@ using namespace std;
 
 TEST(QuestionsCategoryTests, CheckIsPlaced)
 {
-	QuestionsCategory questions("anything");
+	QuestionsCategory questions;
 
 	questions.place_on(1);
 	questions.place_on(2);
@@ -18,7 +18,7 @@ TEST(QuestionsCategoryTests, CheckIsPlaced)
 
 TEST(QuestionsCategoryTests, CheckIsNotPlaced)
 {
-	QuestionsCategory questions("anything");
+	QuestionsCategory questions;
 
 	questions.place_on(2);
 	questions.place_on(3);
@@ -30,7 +30,7 @@ TEST(QuestionsCategoryTests, CheckIsNotPlaced)
 
 TEST(QuestionsCategoryTests, FirstQuestion)
 {
-	QuestionsCategory questions("anything");
+	QuestionsCategory questions;
 
 	questions.append_question("first");
 	string question = questions.next_question();
@@ -40,7 +40,7 @@ TEST(QuestionsCategoryTests, FirstQuestion)
 
 TEST(QuestionsCategoryTests, ManyQuestions)
 {
-	QuestionsCategory questions("anything");
+	QuestionsCategory questions;
 
 	questions.append_question("first");
 	questions.append_question("second");
@@ -51,7 +51,7 @@ TEST(QuestionsCategoryTests, ManyQuestions)
 
 TEST(QuestionsCategoryTests, TooManyQuestions)
 {
-	QuestionsCategory questions("anything");
+	QuestionsCategory questions;
 
 	questions.append_question("first");
 

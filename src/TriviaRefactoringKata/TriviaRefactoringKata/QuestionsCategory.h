@@ -5,9 +5,6 @@
 class QuestionsCategory
 {
 public:
-	QuestionsCategory(std::string name);
-	std::string name();
-
 	void place_on(int place);
 	bool is_placed_on(int place);
 
@@ -23,8 +20,8 @@ private:
 class EndOfQuestionsException : public std::exception
 {
 public:
-	EndOfQuestionsException(std::string category)
-		:msg_("Invalid place: " + category)
+	EndOfQuestionsException()
+		:msg_("End of questions for requested category")
 	{ }
 
 private:
