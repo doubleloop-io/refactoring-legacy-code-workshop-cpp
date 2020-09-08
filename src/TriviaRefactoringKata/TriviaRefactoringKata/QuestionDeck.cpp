@@ -19,12 +19,6 @@ string QuestionDeck::make_question(string category, int index)
 	return oss.str();
 }
 
-void QuestionDeck::fill_questions_for(int count, string category)
-{
-	for (int i = 0; i < count; i++)
-		append_question_for(make_question(category, i), category);
-}
-
 void QuestionDeck::place_category_on(int place, string category)
 {
 	get_or_add(category).place_on(place);

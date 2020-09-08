@@ -9,7 +9,6 @@ class QuestionDeck
 {
 public:
 	string make_question(string category, int index);
-	void fill_questions_for(int count, string category);
 
 	void place_category_on(int place, string category);
 	string category_on(int place);
