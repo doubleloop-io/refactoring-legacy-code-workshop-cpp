@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <list>
 #include <string>
 #include "QuestionsCategory.h"
 
@@ -15,19 +14,11 @@ public:
 
 private:
 	QuestionsCategory pop_;
-
-	list<string> scienceQuestions_;
-	list<int> sciencePlaces_;
-
-	list<string> sportsQuestions_;
-	list<int> sportsPlaces_;
-
-	list<string> rockQuestions_;
-	list<int> rockPlaces_;
+	QuestionsCategory science_;
+	QuestionsCategory sports_;
+	QuestionsCategory rock_;
 
 	string make_question(string categoryName, int index);
-	bool list_contains(int value, list<int> list);
-	string next_question(list<string>& questions);
 };
 
 class InvalidPlaceException : public exception
