@@ -12,6 +12,15 @@ string QuestionDeck::make_question(string categoryName, int index)
 
 QuestionDeck::QuestionDeck()
 {
+}
+
+void QuestionDeck::fill_question_deck()
+{
+	categories_.insert(pair<string, QuestionsCategory&>("Pop", pop_));
+	categories_.insert(pair<string, QuestionsCategory&>("Science", science_));
+	categories_.insert(pair<string, QuestionsCategory&>("Sports", sports_));
+	categories_.insert(pair<string, QuestionsCategory&>("Rock", rock_));
+
 	pop_.place_on(0);
 	pop_.place_on(4);
 	pop_.place_on(8);
@@ -25,14 +34,6 @@ QuestionDeck::QuestionDeck()
 	rock_.place_on(7);
 	rock_.place_on(11);
 
-	categories_.insert(pair<string, QuestionsCategory&>("Pop", pop_));
-	categories_.insert(pair<string, QuestionsCategory&>("Science", science_));
-	categories_.insert(pair<string, QuestionsCategory&>("Sports", sports_));
-	categories_.insert(pair<string, QuestionsCategory&>("Rock", rock_));
-}
-
-void QuestionDeck::fill_question_deck()
-{
 	for (auto& pair : categories_)
 	{
 		for (int i = 0; i < 50; i++)
