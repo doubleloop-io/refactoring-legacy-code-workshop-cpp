@@ -21,8 +21,8 @@ private:
 
 	QuestionsCategory& get_or_add(string category);
 
-	string make_question(string categoryName, int index);
-	void fill_questions_for(int count, string categoryName);
+	string make_question(string category, int index);
+	void fill_questions_for(int count, string category);
 };
 
 class InvalidPlaceException : public exception

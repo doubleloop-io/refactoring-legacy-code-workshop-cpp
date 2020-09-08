@@ -12,17 +12,17 @@ QuestionsCategory& QuestionDeck::get_or_add(string category)
 	return categories_.find(category)->second;
 }
 
-string QuestionDeck::make_question(string categoryName, int index)
+string QuestionDeck::make_question(string category, int index)
 {
 	ostringstream oss(ostringstream::out);
-	oss << categoryName << " Question " << index;
+	oss << category << " Question " << index;
 	return oss.str();
 }
 
-void QuestionDeck::fill_questions_for(int count, string categoryName)
+void QuestionDeck::fill_questions_for(int count, string category)
 {
 	for (int i = 0; i < count; i++)
-		append_question_for(make_question(categoryName, i), categoryName);
+		append_question_for(make_question(category, i), category);
 }
 
 void QuestionDeck::fill_question_deck()
