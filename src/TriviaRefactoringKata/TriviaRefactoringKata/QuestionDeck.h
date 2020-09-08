@@ -9,7 +9,10 @@ class QuestionDeck
 {
 public:
 	void fill_question_deck();
+
+	void place_category_on(int place, string category);
 	string category_on(int place);
+
 	string ask_question(string category);
 
 private:

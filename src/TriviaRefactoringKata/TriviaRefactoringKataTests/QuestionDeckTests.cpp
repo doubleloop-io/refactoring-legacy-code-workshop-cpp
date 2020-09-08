@@ -5,6 +5,40 @@ using namespace std;
 
 class QuestionDeckTestsFixture : public ::testing::TestWithParam<tuple<int, string>> {};
 
+TEST(QuestionDeckTestsFixture, SameCategoryOnManyPlaces) {
+	QuestionDeck deck;
+
+	deck.place_category_on(1, "foo");
+	deck.place_category_on(22, "foo");
+
+	EXPECT_EQ(deck.category_on(1), "foo");
+	EXPECT_EQ(deck.category_on(22), "foo");
+}
+
+TEST(QuestionDeckTestsFixture, DifferentCategoriesOnManyPlaces) {
+	QuestionDeck deck;
+
+	deck.place_category_on(1, "foo");
+	deck.place_category_on(22, "bar");
+
+	EXPECT_EQ(deck.category_on(1), "foo");
+	EXPECT_EQ(deck.category_on(22), "bar");
+}
+
+TEST(QuestionDeckTests, CategoryForEmptyPlace)
+{
+	QuestionDeck deck;
+
+	deck.place_category_on(1, "foo");
+	deck.place_category_on(22, "bar");
+
+	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(123), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(INT32_MAX), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(-1), InvalidPlaceException);
+}
+
 TEST_P(QuestionDeckTestsFixture, LookupCategoryByPlace) {
 	int place = get<0>(GetParam());
 	string expected = get<1>(GetParam());
@@ -37,17 +71,6 @@ INSTANTIATE_TEST_CASE_P(
 		make_pair(11, "Rock")
 	)
 );
-
-TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
-{
-	QuestionDeck deck;
-	deck.fill_question_deck();
-	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
-	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
-	EXPECT_THROW(deck.category_on(123), InvalidPlaceException);
-	EXPECT_THROW(deck.category_on(INT32_MAX), InvalidPlaceException);
-	EXPECT_THROW(deck.category_on(-1), InvalidPlaceException);
-}
 
 TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
 {

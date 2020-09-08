@@ -42,6 +42,15 @@ void QuestionDeck::fill_question_deck()
 	}
 }
 
+void QuestionDeck::place_category_on(int place, string category)
+{
+	auto it = categories_.find(category);
+	if (it == categories_.end())
+		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
+
+	categories_.find(category)->second.place_on(place);
+}
+
 string QuestionDeck::category_on(int place)
 {
 	for (auto& pair : categories_)
