@@ -4,14 +4,6 @@
 
 using namespace std;
 
-void Game::fill_question_deck()
-{
-	setup_category(50, { 0,4,8 }, "Pop");
-	setup_category(50, { 1,5,9 }, "Science");
-	setup_category(50, { 2,6,10 }, "Sports");
-	setup_category(50, { 3,7,11 }, "Rock");
-}
-
 Game::Game() : places{}, purses{}, currentPlayer(0){
 }
 

@@ -23,7 +23,6 @@ private:
 
 public:
 	Game();
-	void fill_question_deck();
 	bool isPlayable();
 	bool add(string playerName);
 	void setup_category(int questionsCount, list<int> places, string category);
