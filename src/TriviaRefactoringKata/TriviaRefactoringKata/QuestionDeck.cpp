@@ -24,10 +24,10 @@ string QuestionDeck::next_question(list<string>& questions)
 }
 
 QuestionDeck::QuestionDeck()
-	: popPlaces_{0, 4, 8},
-	  sciencePlaces_{1, 5, 9},
-	  sportsPlaces_{2, 6, 10},
-	  rockPlaces_{3, 7, 11}
+	: popPlaces_{ 0, 4, 8 },
+	sciencePlaces_{ 1, 5, 9 },
+	sportsPlaces_{ 2, 6, 10 },
+	rockPlaces_{ 3, 7, 11 }
 {
 }
 
@@ -56,23 +56,12 @@ string QuestionDeck::ask_question(string current_category)
 {
 	string question = "";
 	if (current_category == "Pop")
-	{
 		question = next_question(popQuestions_);
-	}
 	if (current_category == "Science")
-	{
-		question = scienceQuestions_.front();
-		scienceQuestions_.pop_front();
-	}
+		question = next_question(scienceQuestions_);
 	if (current_category == "Sports")
-	{
-		question = sportsQuestions_.front();
-		sportsQuestions_.pop_front();
-	}
+		question = next_question(sportsQuestions_);
 	if (current_category == "Rock")
-	{
-		question = rockQuestions_.front();
-		rockQuestions_.pop_front();
-	}
+		question = next_question(rockQuestions_);
 	return question;
 }
