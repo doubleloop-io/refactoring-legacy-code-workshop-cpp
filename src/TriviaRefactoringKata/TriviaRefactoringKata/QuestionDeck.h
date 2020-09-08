@@ -9,6 +9,8 @@ class QuestionDeck
 {
 public:
 	void fill_question_deck();
+	string make_question(string category, int index);
+	void fill_questions_for(int count, string category);
 
 	void place_category_on(int place, string category);
 	string category_on(int place);
@@ -20,9 +22,6 @@ private:
 	map<string, QuestionsCategory> categories_;
 
 	QuestionsCategory& get_or_add(string category);
-
-	string make_question(string category, int index);
-	void fill_questions_for(int count, string category);
 };
 
 class InvalidPlaceException : public exception
