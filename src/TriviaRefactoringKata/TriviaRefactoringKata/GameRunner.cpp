@@ -3,8 +3,6 @@
 #include <ctime>
 #include "Game.h"
 
-bool GameRunner::notAWinner;
-
 void GameRunner::run(int argc, char* argv[])
 {
 	srand((int)time(NULL));

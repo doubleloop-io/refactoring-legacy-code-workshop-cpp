@@ -2,5 +2,6 @@
 
 int main(int argc, char *argv[])
 {
-	GameRunner::run(argc, argv);
+	GameRunner runner;
+	runner.run(argc, argv);
 }
