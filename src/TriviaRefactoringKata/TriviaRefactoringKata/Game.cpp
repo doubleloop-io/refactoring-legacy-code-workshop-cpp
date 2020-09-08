@@ -75,7 +75,7 @@ void Game::askQuestion()
 {
 	auto current_category = currentCategory();
 	auto question = deck.ask_question(current_category);
-	if (!empty(question)) cout << question << endl;
+	cout << question << endl;
 }
 
 string Game::currentCategory()
