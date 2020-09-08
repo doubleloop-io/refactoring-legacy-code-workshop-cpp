@@ -8,7 +8,7 @@ class QuestionDeck
 public:
 	void fill_question_deck();
 	string current_category(int current_place);
-	void ask_question(string current_category);
+	string ask_question(string current_category);
 
 private:
 	list<string> popQuestions_;

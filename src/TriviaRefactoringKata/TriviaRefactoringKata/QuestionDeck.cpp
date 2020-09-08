@@ -45,7 +45,7 @@ string QuestionDeck::current_category(int current_place)
 	return "Rock";
 }
 
-void QuestionDeck::ask_question(string current_category)
+string QuestionDeck::ask_question(string current_category)
 {
 	if (current_category == "Pop")
 	{
@@ -67,4 +67,5 @@ void QuestionDeck::ask_question(string current_category)
 		cout << rockQuestions_.front() << endl;
 		rockQuestions_.pop_front();
 	}
+	return "";
 }
