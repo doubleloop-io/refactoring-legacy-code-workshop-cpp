@@ -1,15 +1,7 @@
 ﻿#include "QuestionDeck.h"
 #include <sstream>
-#include <iostream>
 
 using namespace std;
-
-string QuestionDeck::createRockQuestion(int index)
-{
-	char indexStr[127];
-	sprintf_s(indexStr, "Rock Question %d", index);
-	return indexStr;
-}
 
 string QuestionDeck::make_question(string categoryName, int index)
 {

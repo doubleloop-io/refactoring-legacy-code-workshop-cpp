@@ -16,6 +16,5 @@ private:
 	list<string> sportsQuestions_;
 	list<string> rockQuestions_;
 
-	string createRockQuestion(int index);
 	string make_question(string categoryName, int index);
 };
