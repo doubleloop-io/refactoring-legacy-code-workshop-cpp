@@ -18,8 +18,21 @@ INSTANTIATE_TEST_CASE_P(
 	QuestionDeckTests,
 	QuestionDeckTestsFixture,
 	::testing::Values(
+		// --
 		make_pair(0, "Pop"),
 		make_pair(4, "Pop"),
-		make_pair(8, "Pop")
+		make_pair(8, "Pop"),
+		// --
+		make_pair(1, "Science"),
+		make_pair(5, "Science"),
+		make_pair(9, "Science"),
+		// --
+		make_pair(2, "Sports"),
+		make_pair(6, "Sports"),
+		make_pair(10, "Sports"),
+		// --
+		make_pair(3, "Rock"),
+		make_pair(7, "Rock"),
+		make_pair(11, "Rock")
 	)
 );
