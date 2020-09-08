@@ -103,11 +103,6 @@ void Game::setup_category(list<string> questions, list<int> places, string categ
 		deck.append_question_for(item, category);
 }
 
-void Game::setup_category(int questionsCount, list<int> places, string category)
-{
-	setup_category(make_questions(category, questionsCount), places, category);
-}
-
 bool Game::wasCorrectlyAnswered()
 {
 	if (inPenaltyBox[currentPlayer])

@@ -26,7 +26,6 @@ public:
 	bool isPlayable();
 	bool add(string playerName);
 	void setup_category(list<string> questions, list<int> places, string category);
-	void setup_category(int questionsCount, list<int> places, string category);
 	static string make_question(string category, int index);
 	static list<string> make_questions(string category, int count);
 
