@@ -33,18 +33,18 @@ QuestionDeck::QuestionDeck()
 
 void QuestionDeck::fill_question_deck()
 {
-	for (int i = 0; i < 50; i++)
+	for (auto& pair : categories_)
 	{
-		pop_.append_question(make_question("Pop", i));
-		science_.append_question(make_question("Science", i));
-		sports_.append_question(make_question("Sports", i));
-		rock_.append_question(make_question("Rock", i));
+		for (int i = 0; i < 50; i++)
+		{
+			pair.second.append_question(make_question(pair.first, i));
+		}
 	}
 }
 
 string QuestionDeck::category_on(int place)
 {
-	for(auto& pair: categories_)
+	for (auto& pair : categories_)
 	{
 		if (pair.second.is_placed_on(place))
 			return pair.first;
