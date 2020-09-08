@@ -21,21 +21,21 @@ string QuestionDeck::make_question(string categoryName, int index)
 
 void QuestionDeck::fill_question_deck()
 {
-	get_or_add("Pop").place_on(0);
-	get_or_add("Pop").place_on(4);
-	get_or_add("Pop").place_on(8);
+	place_category_on(0, "Pop");
+	place_category_on(4,"Pop");
+	place_category_on(8,"Pop");
 
-	get_or_add("Science").place_on(1);
-	get_or_add("Science").place_on(5);
-	get_or_add("Science").place_on(9);
+	place_category_on(1,"Science");
+	place_category_on(5,"Science");
+	place_category_on(9,"Science");
 
-	get_or_add("Sports").place_on(2);
-	get_or_add("Sports").place_on(6);
-	get_or_add("Sports").place_on(10);
+	place_category_on(2,"Sports");
+	place_category_on(6,"Sports");
+	place_category_on(10,"Sports");
 
-	get_or_add("Rock").place_on(3);
-	get_or_add("Rock").place_on(7);
-	get_or_add("Rock").place_on(11);
+	place_category_on(3,"Rock");
+	place_category_on(7,"Rock");
+	place_category_on(11, "Rock");
 
 	for (auto& pair : categories_)
 	{
