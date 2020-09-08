@@ -34,7 +34,6 @@ public:
 private:
 	void askQuestion();
 	string currentCategory();
-	void fill_questions_for(int count, string category);
 	static string make_question(string category, int index);
 
 public:

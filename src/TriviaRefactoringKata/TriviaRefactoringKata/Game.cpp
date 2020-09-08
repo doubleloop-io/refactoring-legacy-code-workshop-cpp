@@ -87,12 +87,6 @@ string Game::currentCategory()
 	return deck.category_on(current_place);
 }
 
-void Game::fill_questions_for(int count, string category)
-{
-	for (int i = 0; i < count; i++)
-		deck.append_question_for(make_question(category, i), category);
-}
-
 string Game::make_question(string category, int index)
 {
 	ostringstream oss(ostringstream::out);
