@@ -55,3 +55,12 @@ TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
 	EXPECT_EQ(deck.ask_question("Sports"), "Sports Question 0");
 	EXPECT_EQ(deck.ask_question("Rock"), "Rock Question 0");
 }
+
+TEST(QuestionDeckTests, QuestionForUnknownCategory)
+{
+	QuestionDeck deck;
+	deck.fill_question_deck();
+	EXPECT_EQ(deck.ask_question("foo"), "");
+	EXPECT_EQ(deck.ask_question("pop"), "");
+	EXPECT_EQ(deck.ask_question("pOp"), "");
+}
