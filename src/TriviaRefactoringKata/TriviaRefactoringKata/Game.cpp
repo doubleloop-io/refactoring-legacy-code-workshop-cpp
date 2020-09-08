@@ -28,7 +28,6 @@ void Game::fill_question_deck()
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){
-	fill_question_deck();
 }
 
 string Game::createRockQuestion(int index)

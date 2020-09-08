@@ -11,6 +11,8 @@ void GameRunner::run(int seed)
 
 	Game aGame;
 
+	aGame.fill_question_deck();
+
 	aGame.add("Chet");
 	aGame.add("Pat");
 	aGame.add("Sue");
