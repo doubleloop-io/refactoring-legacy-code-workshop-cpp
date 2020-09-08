@@ -69,18 +69,12 @@ void Game::roll(int roll)
 		cout << "The category is " << currentCategory() << endl;
 		askQuestion();
 	}
-
-}
-
-void Game::ask_question(string current_category)
-{
-	deck.ask_question(current_category);
 }
 
 void Game::askQuestion()
 {
 	auto current_category = currentCategory();
-	ask_question(current_category);
+	deck.ask_question(current_category);
 }
 
 string Game::currentCategory()

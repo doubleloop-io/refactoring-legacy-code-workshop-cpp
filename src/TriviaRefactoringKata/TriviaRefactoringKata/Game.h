@@ -29,7 +29,6 @@ public:
 
 	int howManyPlayers();
 	void roll(int roll);
-	void ask_question(string current_category);
 
 private:
 	void askQuestion();
