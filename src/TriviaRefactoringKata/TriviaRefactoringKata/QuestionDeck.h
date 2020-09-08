@@ -14,14 +14,16 @@ public:
 
 private:
 	list<string> popQuestions_;
-	list<string> scienceQuestions_;
-	list<string> sportsQuestions_;
-	list<string> rockQuestions_;
+	list<int> popPlaces_;
 
-	std::list<int> popPlaces_;
-	std::list<int> sciencePlaces_;
-	std::list<int> sportsPlaces_;
-	std::list<int> rockPlaces_;
+	list<string> scienceQuestions_;
+	list<int> sciencePlaces_;
+
+	list<string> sportsQuestions_;
+	list<int> sportsPlaces_;
+
+	list<string> rockQuestions_;
+	list<int> rockPlaces_;
 
 	string make_question(string categoryName, int index);
 	bool list_contains(int value, list<int> list);
