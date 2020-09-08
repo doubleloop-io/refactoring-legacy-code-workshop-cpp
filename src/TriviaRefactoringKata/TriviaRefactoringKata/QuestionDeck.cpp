@@ -59,10 +59,9 @@ string QuestionDeck::category_on(int place)
 
 string QuestionDeck::ask_question(string category)
 {
-	if (category == pop_.name()) return pop_.next_question();
-	if (category == science_.name()) return science_.next_question();
-	if (category == sports_.name()) return sports_.next_question();
-	if (category == rock_.name()) return rock_.next_question();
+	auto it = categories_.find(category);
+	if (it == categories_.end())
+		throw InvalidCategoryException(category);
 
-	throw InvalidCategoryException(category);
+	return it->second.next_question();
 }
