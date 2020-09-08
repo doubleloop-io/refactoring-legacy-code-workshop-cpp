@@ -6,7 +6,25 @@ using namespace std;
 
 void Game::fill_question_deck()
 {
-	deck.fill_question_deck();
+	deck.place_category_on(0, "Pop");
+	deck.place_category_on(4, "Pop");
+	deck.place_category_on(8, "Pop");
+	deck.fill_questions_for(50, "Pop");
+
+	deck.place_category_on(1, "Science");
+	deck.place_category_on(5, "Science");
+	deck.place_category_on(9, "Science");
+	deck.fill_questions_for(50, "Science");
+
+	deck.place_category_on(2, "Sports");
+	deck.place_category_on(6, "Sports");
+	deck.place_category_on(10, "Sports");
+	deck.fill_questions_for(50, "Sports");
+
+	deck.place_category_on(3, "Rock");
+	deck.place_category_on(7, "Rock");
+	deck.place_category_on(11, "Rock");
+	deck.fill_questions_for(50, "Rock");
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){
