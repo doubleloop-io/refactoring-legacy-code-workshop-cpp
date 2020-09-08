@@ -49,10 +49,15 @@ void QuestionDeck::fill_question_deck()
 
 string QuestionDeck::category_on(int place)
 {
-	if (pop_.is_placed_on(place)) return pop_.name();
-	if (science_.is_placed_on(place)) return science_.name();
-	if (sports_.is_placed_on(place)) return sports_.name();
-	if (rock_.is_placed_on(place)) return rock_.name();
+	for(auto& pair: categories_)
+	{
+		if (pair.second.is_placed_on(place))
+			return pair.first;
+	}
+	// if (pop_.is_placed_on(place)) return pop_.name();
+	// if (science_.is_placed_on(place)) return science_.name();
+	// if (sports_.is_placed_on(place)) return sports_.name();
+	// if (rock_.is_placed_on(place)) return rock_.name();
 
 	throw InvalidPlaceException(place);
 }
