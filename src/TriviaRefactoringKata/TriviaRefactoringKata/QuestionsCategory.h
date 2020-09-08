@@ -5,10 +5,14 @@
 class QuestionsCategory
 {
 public:
+	QuestionsCategory(std::string name);
 	QuestionsCategory(std::string name, std::list<int> places);
-	void append_question(std::string question);
-	bool is_placed_on(int place);
 	std::string name();
+
+	void place_on(int place);
+	bool is_placed_on(int place);
+
+	void append_question(std::string question);
 	std::string next_question();
 
 private:

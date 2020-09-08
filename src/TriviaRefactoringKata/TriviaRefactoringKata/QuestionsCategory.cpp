@@ -1,6 +1,11 @@
 ﻿#include <algorithm>
 #include "QuestionsCategory.h"
 
+QuestionsCategory::QuestionsCategory(std::string name)
+	:name_(name)
+{
+}
+
 QuestionsCategory::QuestionsCategory(std::string name, std::list<int> places)
 	:name_(name), places_(places)
 {
@@ -19,6 +24,11 @@ bool QuestionsCategory::is_placed_on(int place)
 std::string QuestionsCategory::name()
 {
 	return name_;
+}
+
+void QuestionsCategory::place_on(int place)
+{
+	places_.push_back(place);
 }
 
 std::string QuestionsCategory::next_question()
