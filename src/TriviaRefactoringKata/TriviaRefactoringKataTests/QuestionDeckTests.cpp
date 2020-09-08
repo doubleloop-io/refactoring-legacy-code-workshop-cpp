@@ -36,3 +36,12 @@ INSTANTIATE_TEST_CASE_P(
 		make_pair(11, "Rock")
 	)
 );
+
+TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
+{
+	QuestionDeck deck;
+	EXPECT_EQ(deck.current_category(12) , "Rock");
+	EXPECT_EQ(deck.current_category(123) , "Rock");
+	EXPECT_EQ(deck.current_category(INT32_MAX) , "Rock");
+	EXPECT_EQ(deck.current_category(-1) , "Rock");
+}
