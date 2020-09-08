@@ -37,16 +37,6 @@ TEST(QuestionDeckTests, CategoryForEmptyPlace)
 	EXPECT_THROW(deck.category_on(-1), InvalidPlaceException);
 }
 
-TEST(QuestionDeckTests, FirstAskedQuestionForCategory_)
-{
-	QuestionDeck deck;
-	deck.fill_question_deck();
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 0");
-	EXPECT_EQ(deck.ask_question("Science"), "Science Question 0");
-	EXPECT_EQ(deck.ask_question("Sports"), "Sports Question 0");
-	EXPECT_EQ(deck.ask_question("Rock"), "Rock Question 0");
-}
-
 TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
 {
 	QuestionDeck deck;
@@ -58,15 +48,6 @@ TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
 	EXPECT_EQ(deck.ask_question("bar"), "first bar");
 }
 
-TEST(QuestionDeckTests, QuestionForUnknownCategory_)
-{
-	QuestionDeck deck;
-	deck.fill_question_deck();
-	EXPECT_THROW(deck.ask_question("foo"), InvalidCategoryException);
-	EXPECT_THROW(deck.ask_question("pop"), InvalidCategoryException);
-	EXPECT_THROW(deck.ask_question("pOp"), InvalidCategoryException);
-}
-
 TEST(QuestionDeckTests, QuestionForUnknownCategory)
 {
 	QuestionDeck deck;
@@ -74,16 +55,6 @@ TEST(QuestionDeckTests, QuestionForUnknownCategory)
 	deck.append_question_for("first bar", "bar");
 
 	EXPECT_THROW(deck.ask_question("foo"), InvalidCategoryException);
-}
-
-TEST(QuestionDeckTests, MultipleAskedQuestionForSameCategory_)
-{
-	QuestionDeck deck;
-	deck.fill_question_deck();
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 0");
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 1");
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 2");
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 3");
 }
 
 TEST(QuestionDeckTests, MultipleAskedQuestionForSameCategory)
@@ -95,18 +66,6 @@ TEST(QuestionDeckTests, MultipleAskedQuestionForSameCategory)
 
 	EXPECT_EQ(deck.ask_question("bar"), "first bar");
 	EXPECT_EQ(deck.ask_question("bar"), "second bar");
-}
-
-TEST(QuestionDeckTests, MultipleAskedQuestionForMixedCategory_)
-{
-	QuestionDeck deck;
-	deck.fill_question_deck();
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 0");
-	EXPECT_EQ(deck.ask_question("Sports"), "Sports Question 0");
-	EXPECT_EQ(deck.ask_question("Sports"), "Sports Question 1");
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 1");
-	EXPECT_EQ(deck.ask_question("Rock"), "Rock Question 0");
-	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 2");
 }
 
 TEST(QuestionDeckTests, MultipleAskedQuestionForMixedCategory)
