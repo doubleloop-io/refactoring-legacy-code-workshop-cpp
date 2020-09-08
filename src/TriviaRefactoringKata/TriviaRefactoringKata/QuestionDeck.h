@@ -15,8 +15,6 @@ public:
 
 private:
 	QuestionsCategory pop_;
-	list<string> popQuestions_;
-	list<int> popPlaces_;
 
 	list<string> scienceQuestions_;
 	list<int> sciencePlaces_;
