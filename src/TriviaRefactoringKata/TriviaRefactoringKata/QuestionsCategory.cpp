@@ -23,6 +23,8 @@ std::string QuestionsCategory::name()
 
 std::string QuestionsCategory::next_question()
 {
+	if (questions_.empty()) throw EndOfQuestionsException(name_);
+
 	std::string question = questions_.front();
 	questions_.pop_front();
 	return question;

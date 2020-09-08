@@ -35,3 +35,11 @@ TEST(QuestionsCategoryTests, ManyQuestions)
 	ASSERT_EQ(questions.next_question(), "first");
 	ASSERT_EQ(questions.next_question(), "second");
 }
+
+TEST(QuestionsCategoryTests, TooManyQuestions)
+{
+	QuestionsCategory questions("anything", {});
+	questions.append_question("first");
+	ASSERT_EQ(questions.next_question(), "first");
+	ASSERT_THROW(questions.next_question(), EndOfQuestionsException);
+}
