@@ -19,31 +19,33 @@ string QuestionDeck::make_question(string categoryName, int index)
 	return oss.str();
 }
 
+void QuestionDeck::fill_questions_for(int count, string categoryName)
+{
+	for (int i = 0; i < count; i++)
+		append_question_for(make_question(categoryName, i), categoryName);
+}
+
 void QuestionDeck::fill_question_deck()
 {
 	place_category_on(0, "Pop");
-	place_category_on(4,"Pop");
-	place_category_on(8,"Pop");
+	place_category_on(4, "Pop");
+	place_category_on(8, "Pop");
+	fill_questions_for(50, "Pop");
 
-	place_category_on(1,"Science");
-	place_category_on(5,"Science");
-	place_category_on(9,"Science");
+	place_category_on(1, "Science");
+	place_category_on(5, "Science");
+	place_category_on(9, "Science");
+	fill_questions_for(50, "Science");
 
-	place_category_on(2,"Sports");
-	place_category_on(6,"Sports");
-	place_category_on(10,"Sports");
+	place_category_on(2, "Sports");
+	place_category_on(6, "Sports");
+	place_category_on(10, "Sports");
+	fill_questions_for(50, "Sports");
 
-	place_category_on(3,"Rock");
-	place_category_on(7,"Rock");
+	place_category_on(3, "Rock");
+	place_category_on(7, "Rock");
 	place_category_on(11, "Rock");
-
-	for (auto& pair : categories_)
-	{
-		for (int i = 0; i < 50; i++)
-		{
-			pair.second.append_question(make_question(pair.first, i));
-		}
-	}
+	fill_questions_for(50, "Rock");
 }
 
 void QuestionDeck::place_category_on(int place, string category)
