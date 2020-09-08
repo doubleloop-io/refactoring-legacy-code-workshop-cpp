@@ -11,6 +11,11 @@ string QuestionDeck::make_question(string categoryName, int index)
 	return  oss.str();
 }
 
+bool QuestionDeck::list_contains(int value, list<int> list)
+{
+	return std::find(list.begin(), list.end(), value) != list.end();
+}
+
 void QuestionDeck::fill_question_deck()
 {
 	for (int i = 0; i < 50; i++)
@@ -25,8 +30,7 @@ void QuestionDeck::fill_question_deck()
 string QuestionDeck::current_category(int current_place)
 {
 	std::list<int> popPlaces = {0,4,8};
-	bool popFound = std::find(popPlaces.begin(), popPlaces.end(), current_place) != popPlaces.end();
-	if (popFound) return "Pop";
+	if (list_contains(current_place, popPlaces)) return "Pop";
 
 	if (current_place == 1 ||
 		current_place == 5 ||

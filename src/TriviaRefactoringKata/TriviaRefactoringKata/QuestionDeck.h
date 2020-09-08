@@ -17,4 +17,5 @@ private:
 	list<string> rockQuestions_;
 
 	string make_question(string categoryName, int index);
+	bool list_contains(int value, list<int> list);
 };
