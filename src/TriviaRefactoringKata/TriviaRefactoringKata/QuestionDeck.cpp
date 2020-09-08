@@ -49,22 +49,26 @@ string QuestionDeck::ask_question(string current_category)
 {
 	if (current_category == "Pop")
 	{
-		cout << popQuestions_.front() << endl;
+		auto question = popQuestions_.front();
+		cout << question << endl;
 		popQuestions_.pop_front();
 	}
 	if (current_category == "Science")
 	{
-		cout << scienceQuestions_.front() << endl;
+		auto question = scienceQuestions_.front();
+		cout << question << endl;
 		scienceQuestions_.pop_front();
 	}
 	if (current_category == "Sports")
 	{
-		cout << sportsQuestions_.front() << endl;
+		auto question = sportsQuestions_.front();
+		cout << question << endl;
 		sportsQuestions_.pop_front();
 	}
 	if (current_category == "Rock")
 	{
-		cout << rockQuestions_.front() << endl;
+		auto question = rockQuestions_.front();
+		cout << question << endl;
 		rockQuestions_.pop_front();
 	}
 	return "";
