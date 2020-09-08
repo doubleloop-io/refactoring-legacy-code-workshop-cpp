@@ -97,10 +97,8 @@ void Game::askQuestion()
 }
 
 
-string Game::currentCategory()
+string Game::current_category(int current_place)
 {
-	auto current_place = places[currentPlayer];
-
 	if (current_place == 0) return "Pop";
 	if (current_place == 4) return "Pop";
 	if (current_place == 8) return "Pop";
@@ -111,6 +109,12 @@ string Game::currentCategory()
 	if (current_place == 6) return "Sports";
 	if (current_place == 10) return "Sports";
 	return "Rock";
+}
+
+string Game::currentCategory()
+{
+	auto current_place = places[currentPlayer];
+	return current_category(current_place);
 }
 
 bool Game::wasCorrectlyAnswered()
