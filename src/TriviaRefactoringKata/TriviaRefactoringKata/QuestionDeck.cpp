@@ -16,6 +16,14 @@ bool QuestionDeck::list_contains(int value, list<int> list)
 	return std::find(list.begin(), list.end(), value) != list.end();
 }
 
+QuestionDeck::QuestionDeck()
+	: popPlaces_{ 0,4,8 },
+	sciencePlaces_{ 1,5,9 },
+	sportsPlaces_{ 2,6,10 },
+	rockPlaces_{ 3,7,11 }
+{
+}
+
 void QuestionDeck::fill_question_deck()
 {
 	for (int i = 0; i < 50; i++)
@@ -29,17 +37,10 @@ void QuestionDeck::fill_question_deck()
 
 string QuestionDeck::current_category(int current_place)
 {
-	std::list<int> popPlaces = {0,4,8};
-	if (list_contains(current_place, popPlaces)) return "Pop";
-
-	std::list<int> sciencePlaces = {1,5,9};
-	if (list_contains(current_place, sciencePlaces)) return "Science";
-
-	std::list<int> sportsPlaces = {2,6,10};
-	if (list_contains(current_place, sportsPlaces)) return "Sports";
-
-	std::list<int> rockPlaces = {3,7,11};
-	if (list_contains(current_place, rockPlaces)) return "Rock";
+	if (list_contains(current_place, popPlaces_)) return "Pop";
+	if (list_contains(current_place, sciencePlaces_)) return "Science";
+	if (list_contains(current_place, sportsPlaces_)) return "Sports";
+	if (list_contains(current_place, rockPlaces_)) return "Rock";
 
 	return "Rock";
 }
