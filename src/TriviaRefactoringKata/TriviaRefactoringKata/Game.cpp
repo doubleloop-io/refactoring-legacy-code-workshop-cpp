@@ -81,7 +81,7 @@ void Game::askQuestion()
 string Game::currentCategory()
 {
 	auto current_place = places[currentPlayer];
-	return deck.current_category(current_place);
+	return deck.category_on(current_place);
 }
 
 bool Game::wasCorrectlyAnswered()

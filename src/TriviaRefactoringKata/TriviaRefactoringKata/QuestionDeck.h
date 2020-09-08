@@ -8,7 +8,7 @@ class QuestionDeck
 public:
 	QuestionDeck();
 	void fill_question_deck();
-	string current_category(int current_place);
+	string category_on(int place);
 	string ask_question(string current_category);
 
 private:

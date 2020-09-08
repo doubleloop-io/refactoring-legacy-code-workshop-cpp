@@ -35,12 +35,12 @@ void QuestionDeck::fill_question_deck()
 	}
 }
 
-string QuestionDeck::current_category(int current_place)
+string QuestionDeck::category_on(int place)
 {
-	if (list_contains(current_place, popPlaces_)) return "Pop";
-	if (list_contains(current_place, sciencePlaces_)) return "Science";
-	if (list_contains(current_place, sportsPlaces_)) return "Sports";
-	if (list_contains(current_place, rockPlaces_)) return "Rock";
+	if (list_contains(place, popPlaces_)) return "Pop";
+	if (list_contains(place, sciencePlaces_)) return "Science";
+	if (list_contains(place, sportsPlaces_)) return "Sports";
+	if (list_contains(place, rockPlaces_)) return "Rock";
 
 	return "Rock";
 }

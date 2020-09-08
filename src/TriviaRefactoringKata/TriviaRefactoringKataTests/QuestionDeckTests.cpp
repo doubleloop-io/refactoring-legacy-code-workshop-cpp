@@ -10,7 +10,7 @@ TEST_P(QuestionDeckTestsFixture, LookupCategoryByPlace) {
 	string expected = get<1>(GetParam());
 
 	QuestionDeck deck;
-	auto category = deck.current_category(place);
+	auto category = deck.category_on(place);
 	ASSERT_EQ(category, expected);
 }
 
@@ -40,10 +40,10 @@ INSTANTIATE_TEST_CASE_P(
 TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 {
 	QuestionDeck deck;
-	EXPECT_EQ(deck.current_category(12) , "Rock");
-	EXPECT_EQ(deck.current_category(123) , "Rock");
-	EXPECT_EQ(deck.current_category(INT32_MAX) , "Rock");
-	EXPECT_EQ(deck.current_category(-1) , "Rock");
+	EXPECT_EQ(deck.category_on(12) , "Rock");
+	EXPECT_EQ(deck.category_on(123) , "Rock");
+	EXPECT_EQ(deck.category_on(INT32_MAX) , "Rock");
+	EXPECT_EQ(deck.category_on(-1) , "Rock");
 }
 
 TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
