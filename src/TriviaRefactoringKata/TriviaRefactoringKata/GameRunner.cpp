@@ -5,9 +5,9 @@
 
 bool GameRunner::notAWinner;
 
-void GameRunner::run(int argc, char* argv[])
+void GameRunner::run(int seed)
 {
-	srand((int)time(NULL));
+	srand(seed);
 
 	Game aGame;
 
@@ -29,5 +29,11 @@ void GameRunner::run(int argc, char* argv[])
 			notAWinner = aGame.wasCorrectlyAnswered();
 		}
 	} while (notAWinner);
+}
+
+void GameRunner::run(int argc, char* argv[])
+{
+	// srand(time(NULL));
+	run(15);
 }
 
