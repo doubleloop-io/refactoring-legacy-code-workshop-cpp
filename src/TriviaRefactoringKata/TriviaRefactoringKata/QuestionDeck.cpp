@@ -1,5 +1,4 @@
 ﻿#include "QuestionDeck.h"
-#include <sstream>
 
 using namespace std;
 
@@ -10,13 +9,6 @@ QuestionsCategory& QuestionDeck::get_or_add(string category)
 		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
 
 	return categories_.find(category)->second;
-}
-
-string QuestionDeck::make_question(string category, int index)
-{
-	ostringstream oss(ostringstream::out);
-	oss << category << " Question " << index;
-	return oss.str();
 }
 
 void QuestionDeck::place_category_on(int place, string category)

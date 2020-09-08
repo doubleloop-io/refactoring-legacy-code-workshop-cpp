@@ -8,8 +8,6 @@ using namespace std;
 class QuestionDeck
 {
 public:
-	string make_question(string category, int index);
-
 	void place_category_on(int place, string category);
 	string category_on(int place);
 
