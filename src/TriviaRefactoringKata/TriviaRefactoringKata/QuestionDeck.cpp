@@ -42,7 +42,7 @@ string QuestionDeck::category_on(int place)
 	if (list_contains(place, sportsPlaces_)) return "Sports";
 	if (list_contains(place, rockPlaces_)) return "Rock";
 
-	return "Rock";
+	throw InvalidPlaceException(place);
 }
 
 string QuestionDeck::ask_question(string current_category)

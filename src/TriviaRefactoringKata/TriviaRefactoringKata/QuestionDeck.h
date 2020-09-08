@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <list>
+#include <string>
 
 using namespace std;
 
@@ -24,4 +25,20 @@ private:
 
 	string make_question(string categoryName, int index);
 	bool list_contains(int value, list<int> list);
+};
+
+class InvalidPlaceException : public exception
+{
+public:
+	InvalidPlaceException(int place)
+		:msg_("Invalid place: " + to_string(place))
+	{ }
+
+private:
+	string msg_;
+
+	const char * what() const throw ()
+	{
+		return msg_.c_str();
+	}
 };

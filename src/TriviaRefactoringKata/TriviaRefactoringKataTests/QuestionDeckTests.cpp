@@ -40,10 +40,11 @@ INSTANTIATE_TEST_CASE_P(
 TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 {
 	QuestionDeck deck;
-	EXPECT_EQ(deck.category_on(12) , "Rock");
-	EXPECT_EQ(deck.category_on(123) , "Rock");
-	EXPECT_EQ(deck.category_on(INT32_MAX) , "Rock");
-	EXPECT_EQ(deck.category_on(-1) , "Rock");
+	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(123), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(INT32_MAX), InvalidPlaceException);
+	EXPECT_THROW(deck.category_on(-1), InvalidPlaceException);
 }
 
 TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
