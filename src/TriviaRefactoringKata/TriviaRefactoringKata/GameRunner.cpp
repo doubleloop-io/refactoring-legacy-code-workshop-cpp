@@ -33,7 +33,6 @@ void GameRunner::run(int seed)
 
 void GameRunner::run(int argc, char* argv[])
 {
-	// srand(time(NULL));
-	run(15);
+	run((int)time(NULL));
 }
 
