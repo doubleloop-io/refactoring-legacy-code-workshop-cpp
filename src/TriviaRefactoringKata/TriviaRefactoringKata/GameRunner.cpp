@@ -12,7 +12,7 @@ void GameRunner::run(int seed)
 	Game aGame;
 
 	setup_category(50, { 0,4,8 }, "Pop", aGame);
-	setup_category(50, { 1,5,9 }, "Science", aGame);
+	setup_category(50, { 1,5,9 }, "History", aGame);
 	setup_category(50, { 2,6,10 }, "Sports", aGame);
 	setup_category(50, { 3,7,11 }, "Rock", aGame);
 
