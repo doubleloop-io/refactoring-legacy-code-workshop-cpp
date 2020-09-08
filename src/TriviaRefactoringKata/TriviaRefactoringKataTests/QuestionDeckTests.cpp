@@ -45,3 +45,13 @@ TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 	EXPECT_EQ(deck.current_category(INT32_MAX) , "Rock");
 	EXPECT_EQ(deck.current_category(-1) , "Rock");
 }
+
+TEST(QuestionDeckTests, FirstAskedQuestionForCategory)
+{
+	QuestionDeck deck;
+	deck.fill_question_deck();
+	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 0");
+	EXPECT_EQ(deck.ask_question("Science"), "Science Question 0");
+	EXPECT_EQ(deck.ask_question("Sports"), "Sports Question 0");
+	EXPECT_EQ(deck.ask_question("Rock"), "Rock Question 0");
+}
