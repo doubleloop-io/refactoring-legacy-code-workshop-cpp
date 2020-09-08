@@ -48,6 +48,9 @@
   <ItemGroup>
     <ClInclude Include="FileRedirect.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="app_output.golden_master.txt" />
+  </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
