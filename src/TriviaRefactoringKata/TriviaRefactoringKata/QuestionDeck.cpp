@@ -3,6 +3,15 @@
 
 using namespace std;
 
+QuestionsCategory& QuestionDeck::get_or_add(string category)
+{
+	auto it = categories_.find(category);
+	if (it == categories_.end())
+		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
+
+	return categories_.find(category)->second;
+}
+
 string QuestionDeck::make_question(string categoryName, int index)
 {
 	ostringstream oss(ostringstream::out);
@@ -44,11 +53,7 @@ void QuestionDeck::fill_question_deck()
 
 void QuestionDeck::place_category_on(int place, string category)
 {
-	auto it = categories_.find(category);
-	if (it == categories_.end())
-		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
-
-	categories_.find(category)->second.place_on(place);
+	get_or_add(category).place_on(place);
 }
 
 string QuestionDeck::category_on(int place)
@@ -64,11 +69,7 @@ string QuestionDeck::category_on(int place)
 
 void QuestionDeck::append_question_for(string question, string category)
 {
-	auto it = categories_.find(category);
-	if (it == categories_.end())
-		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
-
-	categories_.find(category)->second.append_question(question);
+	get_or_add(category).append_question(question);
 }
 
 string QuestionDeck::next_question_for(string category)

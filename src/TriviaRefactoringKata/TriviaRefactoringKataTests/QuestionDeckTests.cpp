@@ -3,7 +3,7 @@
 
 using namespace std;
 
-TEST(QuestionDeckTestsFixture, SameCategoryOnManyPlaces) {
+TEST(QuestionDeckTests, SameCategoryOnManyPlaces) {
 	QuestionDeck deck;
 
 	deck.place_category_on(1, "foo");
@@ -13,7 +13,7 @@ TEST(QuestionDeckTestsFixture, SameCategoryOnManyPlaces) {
 	EXPECT_EQ(deck.category_on(22), "foo");
 }
 
-TEST(QuestionDeckTestsFixture, DifferentCategoriesOnManyPlaces) {
+TEST(QuestionDeckTests, DifferentCategoriesOnManyPlaces) {
 	QuestionDeck deck;
 
 	deck.place_category_on(1, "foo");

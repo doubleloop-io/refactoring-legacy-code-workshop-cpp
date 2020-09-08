@@ -19,6 +19,8 @@ public:
 private:
 	map<string, QuestionsCategory> categories_;
 
+	QuestionsCategory& get_or_add(string category);
+
 	string make_question(string categoryName, int index);
 };
 
