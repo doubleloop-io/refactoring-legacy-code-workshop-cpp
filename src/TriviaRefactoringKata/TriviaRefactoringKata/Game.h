@@ -33,6 +33,7 @@ public:
 private:
 	void askQuestion();
 	string currentCategory();
+	void fill_questions_for(int count, string category);
 
 public:
 	bool wasCorrectlyAnswered();

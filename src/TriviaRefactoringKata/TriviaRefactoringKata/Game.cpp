@@ -9,22 +9,22 @@ void Game::fill_question_deck()
 	deck.place_category_on(0, "Pop");
 	deck.place_category_on(4, "Pop");
 	deck.place_category_on(8, "Pop");
-	deck.fill_questions_for(50, "Pop");
+	fill_questions_for(50, "Pop");
 
 	deck.place_category_on(1, "Science");
 	deck.place_category_on(5, "Science");
 	deck.place_category_on(9, "Science");
-	deck.fill_questions_for(50, "Science");
+	fill_questions_for(50, "Science");
 
 	deck.place_category_on(2, "Sports");
 	deck.place_category_on(6, "Sports");
 	deck.place_category_on(10, "Sports");
-	deck.fill_questions_for(50, "Sports");
+	fill_questions_for(50, "Sports");
 
 	deck.place_category_on(3, "Rock");
 	deck.place_category_on(7, "Rock");
 	deck.place_category_on(11, "Rock");
-	deck.fill_questions_for(50, "Rock");
+	fill_questions_for(50, "Rock");
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){
@@ -100,6 +100,12 @@ string Game::currentCategory()
 {
 	auto current_place = places[currentPlayer];
 	return deck.category_on(current_place);
+}
+
+void Game::fill_questions_for(int count, string category)
+{
+	for (int i = 0; i < count; i++)
+		deck.append_question_for(deck.make_question(category, i), category);
 }
 
 bool Game::wasCorrectlyAnswered()
