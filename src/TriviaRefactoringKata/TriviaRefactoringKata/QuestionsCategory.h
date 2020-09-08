@@ -16,3 +16,19 @@ private:
 	std::list<int> places_;
 	std::list<std::string> questions_;
 };
+
+class EndOfQuestionsException : public std::exception
+{
+public:
+	EndOfQuestionsException(std::string category)
+		:msg_("Invalid place: " + category)
+	{ }
+
+private:
+	std::string msg_;
+
+	const char * what() const throw ()
+	{
+		return msg_.c_str();
+	}
+};

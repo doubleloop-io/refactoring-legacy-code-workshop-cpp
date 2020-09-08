@@ -18,3 +18,20 @@ TEST(QuestionsCategoryTests, CheckIsNotPlaced)
 	EXPECT_FALSE(questions.is_placed_on(4));
 	EXPECT_FALSE(questions.is_placed_on(-3));
 }
+
+TEST(QuestionsCategoryTests, FirstQuestion)
+{
+	QuestionsCategory questions("anything", {});
+	questions.append_question("first");
+	string question = questions.next_question();
+	ASSERT_EQ(question, "first");
+}
+
+TEST(QuestionsCategoryTests, ManyQuestions)
+{
+	QuestionsCategory questions("anything", {});
+	questions.append_question("first");
+	questions.append_question("second");
+	ASSERT_EQ(questions.next_question(), "first");
+	ASSERT_EQ(questions.next_question(), "second");
+}
