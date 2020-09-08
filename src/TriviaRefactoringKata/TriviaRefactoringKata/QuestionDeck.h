@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <list>
 #include <string>
+#include "QuestionsCategory.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ public:
 	string ask_question(string category);
 
 private:
+	QuestionsCategory pop_;
 	list<string> popQuestions_;
 	list<int> popPlaces_;
 

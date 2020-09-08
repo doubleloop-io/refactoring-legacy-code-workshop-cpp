@@ -88,7 +88,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\QuestionDeck.obj;$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\Game.obj;$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\GameRunner.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\QuestionsCategory.obj;$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\QuestionDeck.obj;$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\Game.obj;$(SolutionDir)TriviaRefactoringKata\$(PlatformTarget)\$(TargetedSDKConfiguration)\GameRunner.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
