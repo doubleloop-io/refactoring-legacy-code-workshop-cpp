@@ -27,6 +27,7 @@ public:
 	bool isPlayable();
 	bool add(string playerName);
 	void setup_category(int questionsCount, list<int> places, string category);
+	static string make_question(string category, int index);
 
 	int howManyPlayers();
 	void roll(int roll);
@@ -34,7 +35,6 @@ public:
 private:
 	void askQuestion();
 	string currentCategory();
-	static string make_question(string category, int index);
 
 public:
 	bool wasCorrectlyAnswered();
