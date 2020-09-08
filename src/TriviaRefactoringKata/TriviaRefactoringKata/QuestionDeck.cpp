@@ -10,16 +10,12 @@ string QuestionDeck::make_question(string categoryName, int index)
 	return oss.str();
 }
 
-QuestionDeck::QuestionDeck()
-{
-}
-
 void QuestionDeck::fill_question_deck()
 {
-	categories_.insert(pair<string, QuestionsCategory&>("Pop", pop_));
-	categories_.insert(pair<string, QuestionsCategory&>("Science", science_));
-	categories_.insert(pair<string, QuestionsCategory&>("Sports", sports_));
-	categories_.insert(pair<string, QuestionsCategory&>("Rock", rock_));
+	categories_.insert(pair<string, QuestionsCategory>("Pop", QuestionsCategory()));
+	categories_.insert(pair<string, QuestionsCategory>("Science", QuestionsCategory()));
+	categories_.insert(pair<string, QuestionsCategory>("Sports", QuestionsCategory()));
+	categories_.insert(pair<string, QuestionsCategory>("Rock", QuestionsCategory()));
 
 	categories_.at("Pop").place_on(0);
 	categories_.at("Pop").place_on(4);

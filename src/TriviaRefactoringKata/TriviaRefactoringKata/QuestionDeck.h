@@ -8,18 +8,12 @@ using namespace std;
 class QuestionDeck
 {
 public:
-	QuestionDeck();
 	void fill_question_deck();
 	string category_on(int place);
 	string ask_question(string category);
 
 private:
-	QuestionsCategory pop_;
-	QuestionsCategory science_;
-	QuestionsCategory sports_;
-	QuestionsCategory rock_;
-
-	map<string, QuestionsCategory&> categories_;
+	map<string, QuestionsCategory> categories_;
 
 	string make_question(string categoryName, int index);
 };
