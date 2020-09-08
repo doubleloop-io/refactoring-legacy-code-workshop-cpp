@@ -21,26 +21,21 @@ string QuestionDeck::make_question(string categoryName, int index)
 
 void QuestionDeck::fill_question_deck()
 {
-	categories_.insert(pair<string, QuestionsCategory>("Pop", QuestionsCategory()));
-	categories_.insert(pair<string, QuestionsCategory>("Science", QuestionsCategory()));
-	categories_.insert(pair<string, QuestionsCategory>("Sports", QuestionsCategory()));
-	categories_.insert(pair<string, QuestionsCategory>("Rock", QuestionsCategory()));
+	get_or_add("Pop").place_on(0);
+	get_or_add("Pop").place_on(4);
+	get_or_add("Pop").place_on(8);
 
-	categories_.at("Pop").place_on(0);
-	categories_.at("Pop").place_on(4);
-	categories_.at("Pop").place_on(8);
+	get_or_add("Science").place_on(1);
+	get_or_add("Science").place_on(5);
+	get_or_add("Science").place_on(9);
 
-	categories_.at("Science").place_on(1);
-	categories_.at("Science").place_on(5);
-	categories_.at("Science").place_on(9);
+	get_or_add("Sports").place_on(2);
+	get_or_add("Sports").place_on(6);
+	get_or_add("Sports").place_on(10);
 
-	categories_.at("Sports").place_on(2);
-	categories_.at("Sports").place_on(6);
-	categories_.at("Sports").place_on(10);
-
-	categories_.at("Rock").place_on(3);
-	categories_.at("Rock").place_on(7);
-	categories_.at("Rock").place_on(11);
+	get_or_add("Rock").place_on(3);
+	get_or_add("Rock").place_on(7);
+	get_or_add("Rock").place_on(11);
 
 	for (auto& pair : categories_)
 	{
