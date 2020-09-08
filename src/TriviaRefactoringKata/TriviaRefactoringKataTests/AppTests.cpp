@@ -9,5 +9,9 @@ TEST(AppTest, Run)
 {
 	auto wd = fs::current_path().append("outputs").append("app_output.txt");
 	FileRedirect fr(wd.string());
-	GameRunner::run(15);
+
+	for (size_t i = 0; i < 1; i++)
+	{
+		GameRunner::run(15);
+	}
 }
