@@ -7,6 +7,11 @@ namespace fs = std::experimental::filesystem;
 
 class TestableGameRunner : public GameRunner
 {
+public:
+	void init_rand() override
+	{
+		srand(7);
+	};
 
 };
 

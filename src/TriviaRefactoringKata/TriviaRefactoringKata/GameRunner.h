@@ -3,7 +3,7 @@
 class GameRunner
 {
 public:
-	void init_rand();
+	virtual void init_rand();
 	void run(int argc, char *argv[]);
 
 private:
