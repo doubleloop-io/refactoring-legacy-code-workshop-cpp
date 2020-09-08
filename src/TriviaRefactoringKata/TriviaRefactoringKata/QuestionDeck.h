@@ -14,7 +14,7 @@ public:
 	string category_on(int place);
 
 	void append_question_for(string question, string category);
-	string ask_question(string category);
+	string next_question_for(string category);
 
 private:
 	map<string, QuestionsCategory> categories_;

@@ -71,7 +71,7 @@ void QuestionDeck::append_question_for(string question, string category)
 	categories_.find(category)->second.append_question(question);
 }
 
-string QuestionDeck::ask_question(string category)
+string QuestionDeck::next_question_for(string category)
 {
 	auto it = categories_.find(category);
 	if (it == categories_.end())
