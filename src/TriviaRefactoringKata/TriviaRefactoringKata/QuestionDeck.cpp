@@ -29,6 +29,11 @@ QuestionDeck::QuestionDeck()
 	rock_.place_on(3);
 	rock_.place_on(7);
 	rock_.place_on(11);
+
+	categories_.insert(pair<string, QuestionsCategory&>("Pop", pop_));
+	categories_.insert(pair<string, QuestionsCategory&>("Science", science_));
+	categories_.insert(pair<string, QuestionsCategory&>("Sports", sports_));
+	categories_.insert(pair<string, QuestionsCategory&>("Rock", rock_));
 }
 
 void QuestionDeck::fill_question_deck()

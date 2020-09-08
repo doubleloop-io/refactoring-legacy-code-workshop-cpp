@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <string>
+#include <map>
 #include "QuestionsCategory.h"
 
 using namespace std;
@@ -17,6 +18,8 @@ private:
 	QuestionsCategory science_;
 	QuestionsCategory sports_;
 	QuestionsCategory rock_;
+
+	map<string, QuestionsCategory&> categories_;
 
 	string make_question(string categoryName, int index);
 };
