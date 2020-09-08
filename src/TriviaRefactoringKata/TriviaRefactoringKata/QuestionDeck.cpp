@@ -21,18 +21,21 @@ void QuestionDeck::fill_question_deck()
 	categories_.insert(pair<string, QuestionsCategory&>("Sports", sports_));
 	categories_.insert(pair<string, QuestionsCategory&>("Rock", rock_));
 
-	pop_.place_on(0);
-	pop_.place_on(4);
-	pop_.place_on(8);
-	science_.place_on(1);
-	science_.place_on(5);
-	science_.place_on(9);
-	sports_.place_on(2);
-	sports_.place_on(6);
-	sports_.place_on(10);
-	rock_.place_on(3);
-	rock_.place_on(7);
-	rock_.place_on(11);
+	categories_.at("Pop").place_on(0);
+	categories_.at("Pop").place_on(4);
+	categories_.at("Pop").place_on(8);
+
+	categories_.at("Science").place_on(1);
+	categories_.at("Science").place_on(5);
+	categories_.at("Science").place_on(9);
+
+	categories_.at("Sports").place_on(2);
+	categories_.at("Sports").place_on(6);
+	categories_.at("Sports").place_on(10);
+
+	categories_.at("Rock").place_on(3);
+	categories_.at("Rock").place_on(7);
+	categories_.at("Rock").place_on(11);
 
 	for (auto& pair : categories_)
 	{
