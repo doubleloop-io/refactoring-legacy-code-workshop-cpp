@@ -35,6 +35,7 @@
   <ItemGroup>
     <ClCompile Include="AppTests.cpp" />
     <ClCompile Include="FileRedirect.cpp" />
+    <ClCompile Include="QuestionDeckTests.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
