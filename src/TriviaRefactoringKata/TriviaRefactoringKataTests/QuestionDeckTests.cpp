@@ -10,6 +10,7 @@ TEST_P(QuestionDeckTestsFixture, LookupCategoryByPlace) {
 	string expected = get<1>(GetParam());
 
 	QuestionDeck deck;
+	deck.fill_question_deck();
 	auto category = deck.category_on(place);
 	ASSERT_EQ(category, expected);
 }
@@ -40,6 +41,7 @@ INSTANTIATE_TEST_CASE_P(
 TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 {
 	QuestionDeck deck;
+	deck.fill_question_deck();
 	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
 	EXPECT_THROW(deck.category_on(12), InvalidPlaceException);
 	EXPECT_THROW(deck.category_on(123), InvalidPlaceException);
