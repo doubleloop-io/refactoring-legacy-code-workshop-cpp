@@ -12,7 +12,10 @@ TEST(AppTest, Run)
 
 	for (size_t i = 0; i < 1; i++)
 	{
-		auto seed = i;
+		// seed distribution 
+		// via linear function
+		// f(x) = ax+b,
+		auto seed = 3645 * i + 42;
 		GameRunner::run(seed);
 	}
 }
