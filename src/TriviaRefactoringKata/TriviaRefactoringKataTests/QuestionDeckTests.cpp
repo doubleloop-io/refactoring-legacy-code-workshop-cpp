@@ -64,3 +64,13 @@ TEST(QuestionDeckTests, QuestionForUnknownCategory)
 	EXPECT_EQ(deck.ask_question("pop"), "");
 	EXPECT_EQ(deck.ask_question("pOp"), "");
 }
+
+TEST(QuestionDeckTests, MultipleAskedQuestionForSameCategory)
+{
+	QuestionDeck deck;
+	deck.fill_question_deck();
+	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 0");
+	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 1");
+	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 2");
+	EXPECT_EQ(deck.ask_question("Pop"), "Pop Question 3");
+}
