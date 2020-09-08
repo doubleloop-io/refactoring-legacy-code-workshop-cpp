@@ -10,7 +10,7 @@ public:
 	QuestionDeck();
 	void fill_question_deck();
 	string category_on(int place);
-	string ask_question(string current_category);
+	string ask_question(string category);
 
 private:
 	list<string> popQuestions_;

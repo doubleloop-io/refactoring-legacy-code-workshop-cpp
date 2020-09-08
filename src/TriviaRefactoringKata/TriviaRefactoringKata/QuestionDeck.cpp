@@ -52,16 +52,16 @@ string QuestionDeck::category_on(int place)
 	throw InvalidPlaceException(place);
 }
 
-string QuestionDeck::ask_question(string current_category)
+string QuestionDeck::ask_question(string category)
 {
 	string question = "";
-	if (current_category == "Pop")
+	if (category == "Pop")
 		question = next_question(popQuestions_);
-	if (current_category == "Science")
+	if (category == "Science")
 		question = next_question(scienceQuestions_);
-	if (current_category == "Sports")
+	if (category == "Sports")
 		question = next_question(sportsQuestions_);
-	if (current_category == "Rock")
+	if (category == "Rock")
 		question = next_question(rockQuestions_);
 	return question;
 }
