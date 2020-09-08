@@ -11,13 +11,18 @@ string QuestionDeck::createRockQuestion(int index)
 	return indexStr;
 }
 
+string QuestionDeck::make_question(string categoryName, int index)
+{
+	ostringstream oss(ostringstream::out);
+	oss << categoryName << " Question " << index;
+	return  oss.str();
+}
+
 void QuestionDeck::fill_question_deck()
 {
 	for (int i = 0; i < 50; i++)
 	{
-		ostringstream oss(ostringstream::out);
-		oss << "Pop Question " << i;
-		popQuestions_.push_back(oss.str());
+		popQuestions_.push_back(make_question("Pop", i));
 
 		char str[255];
 		sprintf_s(str, "Science Question %d", i);
