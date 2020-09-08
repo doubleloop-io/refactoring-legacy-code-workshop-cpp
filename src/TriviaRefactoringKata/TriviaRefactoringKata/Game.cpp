@@ -99,15 +99,17 @@ void Game::askQuestion()
 
 string Game::currentCategory()
 {
-	if (places[currentPlayer] == 0) return "Pop";
-	if (places[currentPlayer] == 4) return "Pop";
-	if (places[currentPlayer] == 8) return "Pop";
-	if (places[currentPlayer] == 1) return "Science";
-	if (places[currentPlayer] == 5) return "Science";
-	if (places[currentPlayer] == 9) return "Science";
-	if (places[currentPlayer] == 2) return "Sports";
-	if (places[currentPlayer] == 6) return "Sports";
-	if (places[currentPlayer] == 10) return "Sports";
+	auto current_place = places[currentPlayer];
+
+	if (current_place == 0) return "Pop";
+	if (current_place == 4) return "Pop";
+	if (current_place == 8) return "Pop";
+	if (current_place == 1) return "Science";
+	if (current_place == 5) return "Science";
+	if (current_place == 9) return "Science";
+	if (current_place == 2) return "Sports";
+	if (current_place == 6) return "Sports";
+	if (current_place == 10) return "Sports";
 	return "Rock";
 }
 
