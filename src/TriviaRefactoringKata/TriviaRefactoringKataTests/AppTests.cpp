@@ -12,6 +12,7 @@ TEST(AppTest, Run)
 
 	for (size_t i = 0; i < 1; i++)
 	{
-		GameRunner::run(15);
+		auto seed = i;
+		GameRunner::run(seed);
 	}
 }
