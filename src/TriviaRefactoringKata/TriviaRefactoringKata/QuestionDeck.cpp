@@ -62,6 +62,15 @@ string QuestionDeck::category_on(int place)
 	throw InvalidPlaceException(place);
 }
 
+void QuestionDeck::append_question_for(string question, string category)
+{
+	auto it = categories_.find(category);
+	if (it == categories_.end())
+		categories_.insert(pair<string, QuestionsCategory>(category, QuestionsCategory()));
+
+	categories_.find(category)->second.append_question(question);
+}
+
 string QuestionDeck::ask_question(string category)
 {
 	auto it = categories_.find(category);

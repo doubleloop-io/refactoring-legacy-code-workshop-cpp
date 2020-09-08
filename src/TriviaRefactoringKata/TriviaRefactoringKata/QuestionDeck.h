@@ -13,6 +13,7 @@ public:
 	void place_category_on(int place, string category);
 	string category_on(int place);
 
+	void append_question_for(string question, string category);
 	string ask_question(string category);
 
 private:
