@@ -27,6 +27,7 @@ private:
 
 	string make_question(string categoryName, int index);
 	bool list_contains(int value, list<int> list);
+	string next_question(list<string>& questions);
 };
 
 class InvalidPlaceException : public exception
