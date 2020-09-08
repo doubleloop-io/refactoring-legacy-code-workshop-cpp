@@ -6,25 +6,10 @@ using namespace std;
 
 void Game::fill_question_deck()
 {
-	deck.place_category_on(0, "Pop");
-	deck.place_category_on(4, "Pop");
-	deck.place_category_on(8, "Pop");
-	fill_questions_for(50, "Pop");
-
-	deck.place_category_on(1, "Science");
-	deck.place_category_on(5, "Science");
-	deck.place_category_on(9, "Science");
-	fill_questions_for(50, "Science");
-
-	deck.place_category_on(2, "Sports");
-	deck.place_category_on(6, "Sports");
-	deck.place_category_on(10, "Sports");
-	fill_questions_for(50, "Sports");
-
-	deck.place_category_on(3, "Rock");
-	deck.place_category_on(7, "Rock");
-	deck.place_category_on(11, "Rock");
-	fill_questions_for(50, "Rock");
+	setup_category(50, { 0,4,8 }, "Pop");
+	setup_category(50, { 1,5,9 }, "Science");
+	setup_category(50, { 2,6,10 }, "Sports");
+	setup_category(50, { 3,7,11 }, "Rock");
 }
 
 Game::Game() : places{}, purses{}, currentPlayer(0){
@@ -113,6 +98,15 @@ string Game::make_question(string category, int index)
 	ostringstream oss(ostringstream::out);
 	oss << category << " Question " << index;
 	return oss.str();
+}
+
+void Game::setup_category(int questionsCount, list<int> places, string category)
+{
+	for (auto item : places)
+		deck.place_category_on(item, category);
+
+	for (int i = 0; i < questionsCount; i++)
+		deck.append_question_for(make_question(category, i), category);
 }
 
 bool Game::wasCorrectlyAnswered()

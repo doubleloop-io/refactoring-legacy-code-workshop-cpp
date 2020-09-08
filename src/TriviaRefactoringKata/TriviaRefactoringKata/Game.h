@@ -26,6 +26,7 @@ public:
 	void fill_question_deck();
 	bool isPlayable();
 	bool add(string playerName);
+	void setup_category(int questionsCount, list<int> places, string category);
 
 	int howManyPlayers();
 	void roll(int roll);
