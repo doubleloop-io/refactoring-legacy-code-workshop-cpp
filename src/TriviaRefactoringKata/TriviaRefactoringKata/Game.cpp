@@ -96,16 +96,10 @@ void Game::askQuestion()
 	}
 }
 
-
-string Game::current_category(int current_place)
-{
-	return deck.current_category(current_place);
-}
-
 string Game::currentCategory()
 {
 	auto current_place = places[currentPlayer];
-	return current_category(current_place);
+	return deck.current_category(current_place);
 }
 
 bool Game::wasCorrectlyAnswered()

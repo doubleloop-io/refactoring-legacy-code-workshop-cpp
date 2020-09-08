@@ -32,7 +32,6 @@ public:
 
 private:
 	void askQuestion();
-	string current_category(int current_place);
 	string currentCategory();
 
 public:
