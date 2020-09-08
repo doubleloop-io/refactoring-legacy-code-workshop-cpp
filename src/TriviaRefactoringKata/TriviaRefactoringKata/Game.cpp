@@ -86,6 +86,14 @@ string Game::make_question(string category, int index)
 	return oss.str();
 }
 
+list<string> Game::make_questions(string category, int count)
+{
+	list<string> questions;
+	for (int i = 0; i < count; i++)
+		questions.push_back(make_question(category, i));
+	return questions;
+}
+
 void Game::setup_category(list<string> questions, list<int> places, string category)
 {
 	for (auto item : places)
@@ -97,11 +105,7 @@ void Game::setup_category(list<string> questions, list<int> places, string categ
 
 void Game::setup_category(int questionsCount, list<int> places, string category)
 {
-	list<string> questions;
-	for (int i = 0; i < questionsCount; i++)
-		questions.push_back(make_question(category, i));
-
-	setup_category(questions, places, category);
+	setup_category(make_questions(category, questionsCount), places, category);
 }
 
 bool Game::wasCorrectlyAnswered()
