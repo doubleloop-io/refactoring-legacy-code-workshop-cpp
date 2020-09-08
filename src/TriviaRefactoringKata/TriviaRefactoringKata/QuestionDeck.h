@@ -45,3 +45,19 @@ private:
 		return msg_.c_str();
 	}
 };
+
+class InvalidCategoryException : public exception
+{
+public:
+	InvalidCategoryException(string category)
+		:msg_("Invalid category: " + category)
+	{ }
+
+private:
+	string msg_;
+
+	const char * what() const throw ()
+	{
+		return msg_.c_str();
+	}
+};

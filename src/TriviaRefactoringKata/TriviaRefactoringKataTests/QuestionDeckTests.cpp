@@ -61,9 +61,9 @@ TEST(QuestionDeckTests, QuestionForUnknownCategory)
 {
 	QuestionDeck deck;
 	deck.fill_question_deck();
-	EXPECT_EQ(deck.ask_question("foo"), "");
-	EXPECT_EQ(deck.ask_question("pop"), "");
-	EXPECT_EQ(deck.ask_question("pOp"), "");
+	EXPECT_THROW(deck.ask_question("foo"), InvalidCategoryException);
+	EXPECT_THROW(deck.ask_question("pop"), InvalidCategoryException);
+	EXPECT_THROW(deck.ask_question("pOp"), InvalidCategoryException);
 }
 
 TEST(QuestionDeckTests, MultipleAskedQuestionForSameCategory)

@@ -63,5 +63,9 @@ string QuestionDeck::ask_question(string category)
 		question = next_question(sportsQuestions_);
 	if (category == "Rock")
 		question = next_question(rockQuestions_);
+
+	if (empty(question))
+		throw InvalidCategoryException(category);
+
 	return question;
 }
