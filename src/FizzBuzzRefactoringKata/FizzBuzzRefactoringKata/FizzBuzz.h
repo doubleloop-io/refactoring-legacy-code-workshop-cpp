@@ -5,9 +5,11 @@ class FizzBuzz
 public:
 	static std::string say(const int number)
 	{
-		if (number % 15 == 0) return "FizzBuzz";
-		if (number % 5 == 0)  return "Buzz";
-		if (number % 3 == 0)  return "Fizz";
-		return std::to_string(number);
+		std::string str;
+		if (number % 3 == 0) str += "Fizz";
+		if (number % 5 == 0) str += "Buzz";
+		if (number % 7 == 0) str += "Bang";
+
+		return empty(str) ? std::to_string(number) : str;
 	}
 };

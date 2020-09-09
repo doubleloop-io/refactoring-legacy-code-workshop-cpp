@@ -6,8 +6,11 @@ using namespace std;
 class FizzBuzzerTestFixture :public ::testing::TestWithParam<tuple<int, string>> { };
 
 TEST_P(FizzBuzzerTestFixture, SingleNumber) {
+	// arrange
 	int number = std::get<0>(GetParam());
+	//act
 	const string expected = std::get<1>(GetParam());
+	//assert
 	ASSERT_EQ(FizzBuzz::say(number), expected);
 }
 
@@ -23,6 +26,10 @@ INSTANTIATE_TEST_CASE_P(
 		// --
 		make_tuple(15, "FizzBuzz"),
 		make_tuple(15 * 2, "FizzBuzz"),
+		// --
+		make_tuple(7, "Bang"),
+		make_tuple(7 * 2, "Bang"),
+		make_tuple(7 * 3, "FizzBang"),
 		// --
 		make_tuple(1, "1"),
 		make_tuple(2, "2"),
