@@ -12,17 +12,17 @@ Game::Game() : places{}, purses{}, currentPlayer(0){
 		ostringstream oss(ostringstream::out);
 		oss << "Pop Question " << i;
 
-		popQuestions.push_back(oss.str());
+		deck.popQuestions_.push_back(oss.str());
 
 		char str[255];
 		sprintf_s(str, "Science Question %d", i);
-		scienceQuestions.push_back(str);
+		deck.scienceQuestions_.push_back(str);
 
 		char str1[255];
 		sprintf_s(str1, "Sports Question %d", i);
-		sportsQuestions.push_back(str1);
+		deck.sportsQuestions_.push_back(str1);
 
-		rockQuestions.push_back(createRockQuestion(i));
+		deck.rockQuestions_.push_back(createRockQuestion(i));
 	}
 }
 
@@ -97,23 +97,23 @@ void Game::askQuestion()
 {
 	if (currentCategory() == "Pop")
 	{
-		cout << popQuestions.front() << endl;
-		popQuestions.pop_front();
+		cout << deck.popQuestions_.front() << endl;
+		deck.popQuestions_.pop_front();
 	}
 	if (currentCategory() == "Science")
 	{
-		cout << scienceQuestions.front() << endl;
-		scienceQuestions.pop_front();
+		cout << deck.scienceQuestions_.front() << endl;
+		deck.scienceQuestions_.pop_front();
 	}
 	if (currentCategory() == "Sports")
 	{
-		cout << sportsQuestions.front() << endl;
-		sportsQuestions.pop_front();
+		cout << deck.sportsQuestions_.front() << endl;
+		deck.sportsQuestions_.pop_front();
 	}
 	if (currentCategory() == "Rock")
 	{
-		cout << rockQuestions.front() << endl;
-		rockQuestions.pop_front();
+		cout << deck.rockQuestions_.front() << endl;
+		deck.rockQuestions_.pop_front();
 	}
 }
 

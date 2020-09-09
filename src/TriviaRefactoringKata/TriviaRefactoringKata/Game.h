@@ -17,11 +17,6 @@ private:
 
 	bool inPenaltyBox[6];
 
-	list<string> popQuestions;
-	list<string> scienceQuestions;
-	list<string> sportsQuestions;
-	list<string> rockQuestions;
-
 	QuestionDeck deck;
 
 	unsigned int currentPlayer;
