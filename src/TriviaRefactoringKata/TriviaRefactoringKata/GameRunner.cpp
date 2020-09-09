@@ -2,9 +2,14 @@
 #include <ctime>
 #include "GameRunner.h"
 
-void GameRunner::run(int argc, char* argv[])
+void GameRunner::init_rand()
 {
 	srand((int)time(NULL));
+}
+
+void GameRunner::run(int argc, char* argv[])
+{
+	init_rand();
 
 	Game aGame;
 
