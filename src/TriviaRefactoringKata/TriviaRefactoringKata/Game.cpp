@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Game::Game() : places{}, purses{}, currentPlayer(0){
+void Game::fill_questions()
+{
 	for (int i = 0; i < 50; i++)
 	{
 		ostringstream oss(ostringstream::out);
@@ -24,6 +25,10 @@ Game::Game() : places{}, purses{}, currentPlayer(0){
 
 		deck.rockQuestions_.push_back(createRockQuestion(i));
 	}
+}
+
+Game::Game() : places{}, purses{}, currentPlayer(0){
+	fill_questions();
 }
 
 string Game::createRockQuestion(int index)

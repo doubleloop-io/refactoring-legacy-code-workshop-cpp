@@ -23,6 +23,7 @@ private:
 	bool isGettingOutOfPenaltyBox;
 
 public:
+	void fill_questions();
 	Game();
 	string createRockQuestion(int index);
 	bool isPlayable();
