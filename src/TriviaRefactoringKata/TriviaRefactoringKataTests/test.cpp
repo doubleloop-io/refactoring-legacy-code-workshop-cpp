@@ -11,10 +11,19 @@ TEST(DemoTest, SimpleAssertions) {
 class TestableGameRunner : public GameRunner
 {
 public:
+	TestableGameRunner(const int seed)
+		: seed_(seed)
+	{
+	}
+
+public:
 	void init_rand() override
 	{
-		srand(10);
+		srand(seed_);
 	}
+
+private:
+	const int seed_;
 };
 
 
@@ -24,6 +33,6 @@ TEST(ReplTest, GameRun)
 	std::ofstream os(p2);
 	std::cout.rdbuf(os.rdbuf());
 
-	TestableGameRunner runner;
+	TestableGameRunner runner(10);
 	runner.run(0, nullptr);
 }
