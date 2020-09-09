@@ -82,7 +82,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>$(SolutionDir)TriviaRefactoringKata\x64\$(Configuration)\GameRunner.obj;$(SolutionDir)TriviaRefactoringKata\x64\$(Configuration)\Game.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)TriviaRefactoringKata\x64\$(Configuration)\GameRunner.obj;$(SolutionDir)TriviaRefactoringKata\x64\$(Configuration)\Game.obj;$(SolutionDir)TriviaRefactoringKata\x64\$(Configuration)\QuestionDeck.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
