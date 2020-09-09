@@ -9,4 +9,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameRunner.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
+  </ItemGroup>
 </Project>
