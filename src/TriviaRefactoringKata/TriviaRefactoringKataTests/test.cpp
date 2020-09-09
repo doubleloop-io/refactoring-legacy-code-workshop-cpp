@@ -8,13 +8,22 @@ TEST(DemoTest, SimpleAssertions) {
   EXPECT_TRUE(true);
 }
 
+class TestableGameRunner : public GameRunner
+{
+public:
+	void init_rand() override
+	{
+		srand(10);
+	}
+};
+
 
 TEST(ReplTest, GameRun)
 {
-	auto p2 = std::experimental::filesystem::current_path().append("app_output2.txt");
+	auto p2 = std::experimental::filesystem::current_path().append("app_output.txt");
 	std::ofstream os(p2);
 	std::cout.rdbuf(os.rdbuf());
 
-	GameRunner runner;
+	TestableGameRunner runner;
 	runner.run(0, nullptr);
 }
