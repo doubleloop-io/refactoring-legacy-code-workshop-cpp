@@ -1,5 +1,3 @@
 ﻿- not used main and GameRunnr::run args
 
-
-# slice
-- ereditare con un testablegamerunner overrid method
+- use more input values
