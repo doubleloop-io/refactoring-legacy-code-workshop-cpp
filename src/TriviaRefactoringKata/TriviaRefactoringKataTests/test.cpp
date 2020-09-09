@@ -3,11 +3,6 @@
 #include <fstream>
 #include <experimental/filesystem>
 
-TEST(DemoTest, SimpleAssertions) {
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
-}
-
 class TestableGameRunner : public GameRunner
 {
 public:
@@ -16,7 +11,6 @@ public:
 	{
 	}
 
-public:
 	void init_rand() override
 	{
 		srand(seed_);
@@ -47,13 +41,31 @@ private:
 };
 
 auto app_out_path = std::experimental::filesystem::current_path().append("app_output.txt");
+auto app_golden_master = std::experimental::filesystem::current_path().append("app_golden_master.txt");
 
-TEST(ReplTest, GameRun)
+std::string read_content(std::string path)
 {
-	FileRedirect redirect(app_out_path.string());
-	for (int i = 0; i < 100; ++i)
+	std::string line, content;
+	std::ifstream file(path);
+	while (std::getline(file, line))
 	{
-		TestableGameRunner runner(i);
-		runner.run(0, nullptr);
+		content += line + "\r\n";
 	}
+	return  content;
+}
+
+TEST(ApplicationTests, GoldenMaster)
+{
+	{
+		FileRedirect redirect(app_out_path.string());
+		for (int i = 0; i < 100; ++i)
+		{
+			TestableGameRunner runner(i);
+			runner.run(0, nullptr);
+		}
+	}
+
+	auto actual = read_content(app_out_path.string());
+	auto expected = read_content(app_golden_master.string());
+	ASSERT_EQ(actual, expected);
 }
