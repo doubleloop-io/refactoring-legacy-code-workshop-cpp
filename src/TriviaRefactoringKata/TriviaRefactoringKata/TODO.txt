@@ -3,7 +3,7 @@
 - swtich statments ask queston and current category
 - primitive obsession for questions x category
 - data clumps for all questions fields
-- Game::ctor, askQuesiton, currentCategory
+
 - createRockQuestion should be static
 - current_category could be static
 - Game::currentCategory could be inlined????

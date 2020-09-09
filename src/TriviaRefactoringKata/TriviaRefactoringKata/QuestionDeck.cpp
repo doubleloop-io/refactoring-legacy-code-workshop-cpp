@@ -2,7 +2,7 @@
 #include <sstream>
 #include <iostream>
 
-std::string QuestionDeck::createRockQuestion(int index)
+static std::string create_rock_question(int index)
 {
 	char indexStr[127];
 	sprintf_s(indexStr, "Rock Question %d", index);
@@ -26,7 +26,7 @@ void QuestionDeck::fill_questions()
 		sprintf_s(str1, "Sports Question %d", i);
 		sportsQuestions_.push_back(str1);
 
-		rockQuestions_.push_back(createRockQuestion(i));
+		rockQuestions_.push_back(create_rock_question(i));
 	}
 }
 
