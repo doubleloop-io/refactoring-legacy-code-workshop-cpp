@@ -4,7 +4,9 @@
 - primitive obsession for questions x category
 - data clumps for all questions fields
 
-- createRockQuestion should be static
 - current_category could be static
 - Game::currentCategory could be inlined????
 - possible feature envy between Game::askQuestion and Game::currentCategory
+
+# void fill_questions();
+# void ask_question(std::string current_category);
