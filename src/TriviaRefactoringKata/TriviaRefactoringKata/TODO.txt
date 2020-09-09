@@ -1,2 +1,6 @@
 ﻿- not used main and GameRunnr::run args
 
+- swtich statments ask queston and current category
+- primitive obsession for questions x category
+- data clumps for all questions fields
+

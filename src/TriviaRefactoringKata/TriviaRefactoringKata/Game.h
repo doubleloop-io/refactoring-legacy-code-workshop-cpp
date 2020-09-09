@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <string>
+#include "QuestionDeck.h"
 
 using namespace std;
 
@@ -20,6 +21,8 @@ private:
 	list<string> scienceQuestions;
 	list<string> sportsQuestions;
 	list<string> rockQuestions;
+
+	QuestionDeck deck;
 
 	unsigned int currentPlayer;
 	bool isGettingOutOfPenaltyBox;
