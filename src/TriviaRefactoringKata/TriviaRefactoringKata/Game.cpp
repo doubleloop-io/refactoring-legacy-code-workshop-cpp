@@ -72,26 +72,8 @@ void Game::roll(int roll)
 
 void Game::askQuestion()
 {
-	if (currentCategory() == "Pop")
-	{
-		cout << deck.popQuestions_.front() << endl;
-		deck.popQuestions_.pop_front();
-	}
-	if (currentCategory() == "Science")
-	{
-		cout << deck.scienceQuestions_.front() << endl;
-		deck.scienceQuestions_.pop_front();
-	}
-	if (currentCategory() == "Sports")
-	{
-		cout << deck.sportsQuestions_.front() << endl;
-		deck.sportsQuestions_.pop_front();
-	}
-	if (currentCategory() == "Rock")
-	{
-		cout << deck.rockQuestions_.front() << endl;
-		deck.rockQuestions_.pop_front();
-	}
+	auto current_category = currentCategory();
+	deck.ask_question(current_category);
 }
 
 string Game::currentCategory()

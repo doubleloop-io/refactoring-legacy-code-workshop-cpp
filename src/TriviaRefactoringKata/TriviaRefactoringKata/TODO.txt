@@ -6,3 +6,5 @@
 - Game::ctor, askQuesiton, currentCategory
 - createRockQuestion should be static
 - current_category could be static
+- Game::currentCategory could be inlined????
+- possible feature envy between Game::askQuestion and Game::currentCategory
