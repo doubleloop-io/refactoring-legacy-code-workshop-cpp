@@ -6,29 +6,8 @@
 
 using namespace std;
 
-void Game::fill_questions()
-{
-	for (int i = 0; i < 50; i++)
-	{
-		ostringstream oss(ostringstream::out);
-		oss << "Pop Question " << i;
-
-		deck.popQuestions_.push_back(oss.str());
-
-		char str[255];
-		sprintf_s(str, "Science Question %d", i);
-		deck.scienceQuestions_.push_back(str);
-
-		char str1[255];
-		sprintf_s(str1, "Sports Question %d", i);
-		deck.sportsQuestions_.push_back(str1);
-
-		deck.rockQuestions_.push_back(deck.createRockQuestion(i));
-	}
-}
-
 Game::Game() : places{}, purses{}, currentPlayer(0){
-	fill_questions();
+	deck.fill_questions();
 }
 
 bool Game::isPlayable()

@@ -23,7 +23,6 @@ private:
 	bool isGettingOutOfPenaltyBox;
 
 public:
-	void fill_questions();
 	Game();
 	bool isPlayable();
 	bool add(string playerName);

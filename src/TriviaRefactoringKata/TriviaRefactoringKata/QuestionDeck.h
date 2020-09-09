@@ -10,4 +10,5 @@ public:
 	std::list<std::string> rockQuestions_;
 
 	std::string createRockQuestion(int index);
+	void fill_questions();
 };
