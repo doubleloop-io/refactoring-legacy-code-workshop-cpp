@@ -5,3 +5,4 @@
 - data clumps for all questions fields
 - Game::ctor, askQuesiton, currentCategory
 - createRockQuestion should be static
+- current_category could be static
