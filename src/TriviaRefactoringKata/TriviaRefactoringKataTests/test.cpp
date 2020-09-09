@@ -51,6 +51,9 @@ auto app_out_path = std::experimental::filesystem::current_path().append("app_ou
 TEST(ReplTest, GameRun)
 {
 	FileRedirect redirect(app_out_path.string());
-	TestableGameRunner runner(10);
-	runner.run(0, nullptr);
+	for (int i = 0; i < 100; ++i)
+	{
+		TestableGameRunner runner(i);
+		runner.run(0, nullptr);
+	}
 }
