@@ -3,8 +3,8 @@
 class GameRunner
 {
 public:
-	static void run(int argc, char *argv[]);
+	void run(int argc, char *argv[]);
 
 private:
-	static bool notAWinner;
+	bool notAWinner = false;
 };

@@ -2,8 +2,6 @@
 #include <ctime>
 #include "GameRunner.h"
 
-bool GameRunner::notAWinner = false;
-
 void GameRunner::run(int argc, char* argv[])
 {
 	srand((int)time(NULL));

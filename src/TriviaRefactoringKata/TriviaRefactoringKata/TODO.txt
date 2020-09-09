@@ -1,1 +1,7 @@
 ﻿- not used main and GameRunnr::run args
+
+
+# slice
+- extract srand
+- mark method as virtual
+- ereditare con un testablegamerunner overrid method
