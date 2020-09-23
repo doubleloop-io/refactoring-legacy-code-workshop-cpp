@@ -1,8 +1,5 @@
 ﻿- not used main and GameRunnr::run args
 
-- swtich statments ask queston and current category
-- data clumps for all questions fields
-
 - Game::currentCategory could be inlined????
 - possible feature envy between Game::askQuestion and Game::currentCategory
 - fill_questions, la creazione della domanda e' una responsabilita'

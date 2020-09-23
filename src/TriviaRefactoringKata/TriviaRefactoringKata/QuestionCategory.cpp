@@ -15,7 +15,7 @@ std::string QuestionCategory::name() const
 	return name_;
 }
 
-bool QuestionCategory::places_contains(int place) const
+bool QuestionCategory::is_placed_on(int place) const
 {
 	return places_.find(place) != places_.end();
 }

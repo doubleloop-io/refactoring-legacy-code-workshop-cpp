@@ -23,7 +23,7 @@ std::string QuestionDeck::find_category_for(int place) const
 {
 	for (auto& pair : categories_)
 	{
-		if (pair.second.places_contains(place))
+		if (pair.second.is_placed_on(place))
 			return pair.first;
 	}
 	throw PlaceNotFoundException(place);
