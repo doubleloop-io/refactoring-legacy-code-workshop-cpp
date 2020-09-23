@@ -38,9 +38,7 @@ TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 	EXPECT_EQ("Rock", deck.current_category(INT32_MAX));
 }
 
-// test askquestion w/out fillquestions
 // test unknown category
-// test askk all questions + 1
 
 TEST(QuestionDeckTests, OneQuestionForCategory)
 {
@@ -76,3 +74,36 @@ TEST(QuestionDeckTests, ManyQuestionsForMixedCategories)
 	EXPECT_EQ("Pop Question 1", deck.ask_question("Pop"));
 	EXPECT_EQ("Rock Question 1", deck.ask_question("Rock"));
 }
+
+TEST(QuestionDeckTests, UnknownCategory)
+{
+	QuestionDeck deck;
+
+	deck.fill_questions();
+
+	EXPECT_EQ("", deck.ask_question("any-unknown"));
+}
+
+// IGNORE: crash for debug assert
+// TEST(QuestionDeckTests, AskQuestionsOnEmptyDeck)
+// {
+// 	QuestionDeck deck;
+//
+// 	const std::string any_category = "Pop";
+//
+// 	EXPECT_ANY_THROW(deck.ask_question(any_category));
+// }
+
+// IGNORE
+// TEST(QuestionDeckTests, EndOfQuestions)
+// {
+// 	QuestionDeck deck;
+//
+// 	const std::string any_category = "Pop";
+//
+// 	deck.fill_questions();
+// 	for (int i = 0; i < 50; i++)
+// 		deck.ask_question(any_category);
+//
+// 	EXPECT_ANY_THROW(deck.ask_question(any_category));
+// }
