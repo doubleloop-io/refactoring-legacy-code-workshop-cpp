@@ -37,13 +37,42 @@ TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 	EXPECT_EQ("Rock", deck.current_category(123));
 	EXPECT_EQ("Rock", deck.current_category(INT32_MAX));
 }
-//
-// TEST(QuestionDeckTests, FillQuestions)
-// {
-// 	QuestionDeck deck;
-//
-// 	deck.fill_questions();
-// 	deck.ask_question("Pop");
-//
-// 	// ASSERT WHAT??
-// }
+
+// test askquestion w/out fillquestions
+// test unknown category
+// test askk all questions + 1
+
+TEST(QuestionDeckTests, OneQuestionForCategory)
+{
+	QuestionDeck deck;
+
+	deck.fill_questions();
+
+	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
+	EXPECT_EQ("Science Question 0", deck.ask_question("Science"));
+	EXPECT_EQ("Sports Question 0", deck.ask_question("Sports"));
+	EXPECT_EQ("Rock Question 0", deck.ask_question("Rock"));
+}
+
+TEST(QuestionDeckTests, ManyQuestionsForSameCategory)
+{
+	QuestionDeck deck;
+
+	deck.fill_questions();
+
+	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
+	EXPECT_EQ("Pop Question 1", deck.ask_question("Pop"));
+	EXPECT_EQ("Pop Question 2", deck.ask_question("Pop"));
+}
+
+TEST(QuestionDeckTests, ManyQuestionsForMixedCategories)
+{
+	QuestionDeck deck;
+
+	deck.fill_questions();
+
+	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
+	EXPECT_EQ("Rock Question 0", deck.ask_question("Rock"));
+	EXPECT_EQ("Pop Question 1", deck.ask_question("Pop"));
+	EXPECT_EQ("Rock Question 1", deck.ask_question("Rock"));
+}
