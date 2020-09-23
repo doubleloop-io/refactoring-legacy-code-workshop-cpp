@@ -37,33 +37,29 @@ std::string QuestionDeck::find_category_for(int place) const
 
 std::string QuestionDeck::ask_question(std::string current_category)
 {
+	std::string question = "";
 	if (current_category == "Pop") {
-		auto question = popQuestions_.front();
-		std::cout << question << std::endl;
+		question = popQuestions_.front();
 		popQuestions_.pop_front();
-		return question;
 	}
 	if (current_category == "Science")
 	{
-		auto question = scienceQuestions_.front();
-		std::cout << question << std::endl;
+		question = scienceQuestions_.front();
 		scienceQuestions_.pop_front();
-		return question;
 	}
 	if (current_category == "Sports")
 	{
-		auto question = sportsQuestions_.front();
-		std::cout << question << std::endl;
+		question = sportsQuestions_.front();
 		sportsQuestions_.pop_front();
-		return question;
 	}
 	if (current_category == "Rock")
 	{
-		auto question = rockQuestions_.front();
-		std::cout << question << std::endl;
+		question = rockQuestions_.front();
 		rockQuestions_.pop_front();
-		return question;
 	}
 
-	return "";
+	if (!question.empty())
+		std::cout << question << std::endl;
+
+	return question;
 }
