@@ -11,6 +11,3 @@
 	inserirla nella collection un'altra
 - ask_question multi-responsabilita', selezione question + cout
 - ask_question accoppiata all'infrastruttura
-
-# void fill_questions();
-# void ask_question(std::string current_category);

@@ -19,18 +19,27 @@ void QuestionDeck::fill_questions()
 		rockQuestions_.push_back(create_question(i, "Rock"));
 	}
 }
+//  collapse 3 if w/ ORs
+//  collapse 3 ORs w/ set
 
 std::string QuestionDeck::current_category(int current_player_place)
 {
 	if (current_player_place == 0) return "Pop";
 	if (current_player_place == 4) return "Pop";
 	if (current_player_place == 8) return "Pop";
+
 	if (current_player_place == 1) return "Science";
 	if (current_player_place == 5) return "Science";
 	if (current_player_place == 9) return "Science";
+
 	if (current_player_place == 2) return "Sports";
 	if (current_player_place == 6) return "Sports";
 	if (current_player_place == 10) return "Sports";
+
+	if (current_player_place == 3) return "Rock";
+	if (current_player_place == 7) return "Rock";
+	if (current_player_place == 11) return "Rock";
+
 	return "Rock";
 }
 
