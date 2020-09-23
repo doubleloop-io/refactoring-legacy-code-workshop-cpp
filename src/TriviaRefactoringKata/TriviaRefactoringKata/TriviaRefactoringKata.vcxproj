@@ -150,11 +150,13 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameRunner.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="QuestionCategory.cpp" />
     <ClCompile Include="QuestionDeck.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameRunner.h" />
+    <ClInclude Include="QuestionCategory.h" />
     <ClInclude Include="QuestionDeck.h" />
   </ItemGroup>
   <ItemGroup>

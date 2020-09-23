@@ -5,11 +5,13 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GameRunner.cpp" />
     <ClCompile Include="QuestionDeck.cpp" />
+    <ClCompile Include="QuestionCategory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameRunner.h" />
     <ClInclude Include="QuestionDeck.h" />
+    <ClInclude Include="QuestionCategory.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />

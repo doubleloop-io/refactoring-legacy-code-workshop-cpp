@@ -2,6 +2,7 @@
 #include <list>
 #include <unordered_set>
 #include <string>
+#include "QuestionCategory.h"
 
 class QuestionDeck
 {
@@ -11,14 +12,15 @@ public:
 	std::string fetch_next_question(std::string category);
 
 private:
-	std::list<std::string> popQuestions_;
-	std::list<std::string> scienceQuestions_;
-	std::list<std::string> sportsQuestions_;
-	std::list<std::string> rockQuestions_;
+	QuestionCategory pop_ = QuestionCategory("Pop", {0,4,8});
 
-	const std::unordered_set<int> popPlaces_ = { 0,4,8 };
+	std::list<std::string> scienceQuestions_;
 	const std::unordered_set<int> sciencePlaces_ = { 1,5,9 };
+
+	std::list<std::string> sportsQuestions_;
 	const std::unordered_set<int> sportsPlaces_ = { 2,6,10 };
+
+	std::list<std::string> rockQuestions_;
 	const std::unordered_set<int> rockPlaces_ = { 3,7,11 };
 };
 

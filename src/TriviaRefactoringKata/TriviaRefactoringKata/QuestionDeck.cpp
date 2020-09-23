@@ -26,7 +26,8 @@ void QuestionDeck::fill_questions()
 {
 	for (int i = 0; i < 50; i++)
 	{
-		popQuestions_.push_back(create_question(i, "Pop"));
+		pop_.append_question(create_question(i, pop_.name()));
+
 		scienceQuestions_.push_back(create_question(i, "Science"));
 		sportsQuestions_.push_back(create_question(i, "Sports"));
 		rockQuestions_.push_back(create_question(i, "Rock"));
@@ -35,7 +36,8 @@ void QuestionDeck::fill_questions()
 
 std::string QuestionDeck::find_category_for(int place) const
 {
-	if (places_contains(popPlaces_, place)) return "Pop";
+	if (pop_.places_contains(place)) return pop_.name();
+
 	if (places_contains(sciencePlaces_, place)) return "Science";
 	if (places_contains(sportsPlaces_, place)) return "Sports";
 	if (places_contains(rockPlaces_, place)) return "Rock";
@@ -45,7 +47,8 @@ std::string QuestionDeck::find_category_for(int place) const
 
 std::string QuestionDeck::fetch_next_question(std::string category)
 {
-	if (category == "Pop") return next_question(popQuestions_);
+	if (category == pop_.name()) return pop_.next_question();
+
 	if (category == "Science") return next_question(scienceQuestions_);
 	if (category == "Sports") return next_question(sportsQuestions_);
 	if (category == "Rock") return next_question(rockQuestions_);
