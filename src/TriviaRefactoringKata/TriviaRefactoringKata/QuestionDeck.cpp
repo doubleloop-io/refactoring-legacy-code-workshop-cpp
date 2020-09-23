@@ -9,6 +9,11 @@ static std::string create_question(int index, std::string category)
 	return oss.str();
 }
 
+static bool list_contains(std::list<int>& list, int value)
+{
+	return  std::find(list.begin(), list.end(), value) != list.end();
+}
+
 void QuestionDeck::fill_questions()
 {
 	for (int i = 0; i < 50; i++)
@@ -19,14 +24,11 @@ void QuestionDeck::fill_questions()
 		rockQuestions_.push_back(create_question(i, "Rock"));
 	}
 }
-//  collapse 3 if w/ ORs
-//  collapse 3 ORs w/ set
 
 std::string QuestionDeck::current_category(int current_player_place)
 {
-	if (current_player_place == 0) return "Pop";
-	if (current_player_place == 4) return "Pop";
-	if (current_player_place == 8) return "Pop";
+	std::list<int> popPlaces = { 0,4,8 };
+	if (list_contains(popPlaces, current_player_place)) return "Pop";
 
 	if (current_player_place == 1) return "Science";
 	if (current_player_place == 5) return "Science";
