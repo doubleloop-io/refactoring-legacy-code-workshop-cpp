@@ -15,6 +15,13 @@ static bool places_contains(const std::unordered_set<int>& places, int value)
 	return places.find(value) != places.end();
 }
 
+static std::string next_question(std::list<std::string>& questions)
+{
+	auto question = questions.front();
+	questions.pop_front();
+	return question;
+}
+
 void QuestionDeck::fill_questions()
 {
 	for (int i = 0; i < 50; i++)
@@ -32,30 +39,16 @@ std::string QuestionDeck::find_category_for(int place) const
 	if (places_contains(sciencePlaces_, place)) return "Science";
 	if (places_contains(sportsPlaces_, place)) return "Sports";
 	if (places_contains(rockPlaces_, place)) return "Rock";
+
 	return "Rock";
 }
 
-std::string QuestionDeck::ask_question(std::string current_category)
+std::string QuestionDeck::fetch_next_question(std::string category)
 {
-	std::string question = "";
-	if (current_category == "Pop") {
-		question = popQuestions_.front();
-		popQuestions_.pop_front();
-	}
-	if (current_category == "Science")
-	{
-		question = scienceQuestions_.front();
-		scienceQuestions_.pop_front();
-	}
-	if (current_category == "Sports")
-	{
-		question = sportsQuestions_.front();
-		sportsQuestions_.pop_front();
-	}
-	if (current_category == "Rock")
-	{
-		question = rockQuestions_.front();
-		rockQuestions_.pop_front();
-	}
-	return question;
+	if (category == "Pop") return next_question(popQuestions_);
+	if (category == "Science") return next_question(scienceQuestions_);
+	if (category == "Sports") return next_question(sportsQuestions_);
+	if (category == "Rock") return next_question(rockQuestions_);
+
+	return "";
 }

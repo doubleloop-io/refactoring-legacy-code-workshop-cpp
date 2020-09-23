@@ -73,7 +73,7 @@ void Game::roll(int roll)
 void Game::askQuestion()
 {
 	auto current_category = currentCategory();
-	auto question = deck.ask_question(current_category);
+	auto question = deck.fetch_next_question(current_category);
 	if (!question.empty())
 		std::cout << question << std::endl;
 }

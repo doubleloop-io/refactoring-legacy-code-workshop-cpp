@@ -7,7 +7,7 @@ class QuestionDeck
 public:
 	void fill_questions();
 	std::string find_category_for(int place) const;
-	std::string ask_question(std::string current_category);
+	std::string fetch_next_question(std::string category);
 
 private:
 	std::list<std::string> popQuestions_;

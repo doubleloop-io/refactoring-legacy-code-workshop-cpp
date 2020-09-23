@@ -46,10 +46,10 @@ TEST(QuestionDeckTests, OneQuestionForCategory)
 
 	deck.fill_questions();
 
-	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
-	EXPECT_EQ("Science Question 0", deck.ask_question("Science"));
-	EXPECT_EQ("Sports Question 0", deck.ask_question("Sports"));
-	EXPECT_EQ("Rock Question 0", deck.ask_question("Rock"));
+	EXPECT_EQ("Pop Question 0", deck.fetch_next_question("Pop"));
+	EXPECT_EQ("Science Question 0", deck.fetch_next_question("Science"));
+	EXPECT_EQ("Sports Question 0", deck.fetch_next_question("Sports"));
+	EXPECT_EQ("Rock Question 0", deck.fetch_next_question("Rock"));
 }
 
 TEST(QuestionDeckTests, ManyQuestionsForSameCategory)
@@ -58,9 +58,9 @@ TEST(QuestionDeckTests, ManyQuestionsForSameCategory)
 
 	deck.fill_questions();
 
-	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
-	EXPECT_EQ("Pop Question 1", deck.ask_question("Pop"));
-	EXPECT_EQ("Pop Question 2", deck.ask_question("Pop"));
+	EXPECT_EQ("Pop Question 0", deck.fetch_next_question("Pop"));
+	EXPECT_EQ("Pop Question 1", deck.fetch_next_question("Pop"));
+	EXPECT_EQ("Pop Question 2", deck.fetch_next_question("Pop"));
 }
 
 TEST(QuestionDeckTests, ManyQuestionsForMixedCategories)
@@ -69,10 +69,10 @@ TEST(QuestionDeckTests, ManyQuestionsForMixedCategories)
 
 	deck.fill_questions();
 
-	EXPECT_EQ("Pop Question 0", deck.ask_question("Pop"));
-	EXPECT_EQ("Rock Question 0", deck.ask_question("Rock"));
-	EXPECT_EQ("Pop Question 1", deck.ask_question("Pop"));
-	EXPECT_EQ("Rock Question 1", deck.ask_question("Rock"));
+	EXPECT_EQ("Pop Question 0", deck.fetch_next_question("Pop"));
+	EXPECT_EQ("Rock Question 0", deck.fetch_next_question("Rock"));
+	EXPECT_EQ("Pop Question 1", deck.fetch_next_question("Pop"));
+	EXPECT_EQ("Rock Question 1", deck.fetch_next_question("Rock"));
 }
 
 TEST(QuestionDeckTests, UnknownCategory)
@@ -81,7 +81,7 @@ TEST(QuestionDeckTests, UnknownCategory)
 
 	deck.fill_questions();
 
-	EXPECT_EQ("", deck.ask_question("any-unknown"));
+	EXPECT_EQ("", deck.fetch_next_question("any-unknown"));
 }
 
 // IGNORE: crash for debug assert
@@ -91,7 +91,7 @@ TEST(QuestionDeckTests, UnknownCategory)
 //
 // 	const std::string any_category = "Pop";
 //
-// 	EXPECT_ANY_THROW(deck.ask_question(any_category));
+// 	EXPECT_ANY_THROW(deck.fetch_next_question(any_category));
 // }
 
 // IGNORE
@@ -103,7 +103,7 @@ TEST(QuestionDeckTests, UnknownCategory)
 //
 // 	deck.fill_questions();
 // 	for (int i = 0; i < 50; i++)
-// 		deck.ask_question(any_category);
+// 		deck.fetch_next_question(any_category);
 //
-// 	EXPECT_ANY_THROW(deck.ask_question(any_category));
+// 	EXPECT_ANY_THROW(deck.fetch_next_question(any_category));
 // }
