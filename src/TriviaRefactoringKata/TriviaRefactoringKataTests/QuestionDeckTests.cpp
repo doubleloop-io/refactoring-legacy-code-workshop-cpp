@@ -37,3 +37,13 @@ TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 	EXPECT_EQ("Rock", deck.current_category(123));
 	EXPECT_EQ("Rock", deck.current_category(INT32_MAX));
 }
+//
+// TEST(QuestionDeckTests, FillQuestions)
+// {
+// 	QuestionDeck deck;
+//
+// 	deck.fill_questions();
+// 	deck.ask_question("Pop");
+//
+// 	// ASSERT WHAT??
+// }

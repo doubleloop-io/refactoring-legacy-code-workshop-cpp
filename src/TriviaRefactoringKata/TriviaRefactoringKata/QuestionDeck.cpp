@@ -44,25 +44,35 @@ std::string QuestionDeck::current_category(int current_player_place)
 	return "Rock";
 }
 
-void QuestionDeck::ask_question(std::string current_category)
+std::string QuestionDeck::ask_question(std::string current_category)
 {
 	if (current_category == "Pop") {
-		std::cout << popQuestions_.front() << std::endl;
+		auto question = popQuestions_.front();
+		std::cout << question << std::endl;
 		popQuestions_.pop_front();
+		return question;
 	}
 	if (current_category == "Science")
 	{
-		std::cout << scienceQuestions_.front() << std::endl;
+		auto question = scienceQuestions_.front();
+		std::cout << question << std::endl;
 		scienceQuestions_.pop_front();
+		return question;
 	}
 	if (current_category == "Sports")
 	{
-		std::cout << sportsQuestions_.front() << std::endl;
+		auto question = sportsQuestions_.front();
+		std::cout << question << std::endl;
 		sportsQuestions_.pop_front();
+		return question;
 	}
 	if (current_category == "Rock")
 	{
-		std::cout << rockQuestions_.front() << std::endl;
+		auto question = rockQuestions_.front();
+		std::cout << question << std::endl;
 		rockQuestions_.pop_front();
+		return question;
 	}
+
+	return "";
 }

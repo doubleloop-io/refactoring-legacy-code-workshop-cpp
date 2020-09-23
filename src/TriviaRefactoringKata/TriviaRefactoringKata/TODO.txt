@@ -4,9 +4,13 @@
 - primitive obsession for questions x category
 - data clumps for all questions fields
 
-- current_category could be static
+- current_category could be static or mark as const
 - Game::currentCategory could be inlined????
 - possible feature envy between Game::askQuestion and Game::currentCategory
+- fill_questions, la creazione della domanda e' una responsabilita'
+	inserirla nella collection un'altra
+- ask_question multi-responsabilita', selezione question + cout
+- ask_question accoppiata all'infrastruttura
 
 # void fill_questions();
 # void ask_question(std::string current_category);
