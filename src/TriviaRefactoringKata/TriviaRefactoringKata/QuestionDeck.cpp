@@ -30,17 +30,14 @@ std::string QuestionDeck::current_category(int current_player_place)
 	std::list<int> popPlaces = { 0,4,8 };
 	if (list_contains(popPlaces, current_player_place)) return "Pop";
 
-	if (current_player_place == 1) return "Science";
-	if (current_player_place == 5) return "Science";
-	if (current_player_place == 9) return "Science";
+	std::list<int> sciencePlaces = { 1,5,9 };
+	if (list_contains(sciencePlaces, current_player_place)) return "Science";
 
-	if (current_player_place == 2) return "Sports";
-	if (current_player_place == 6) return "Sports";
-	if (current_player_place == 10) return "Sports";
+	std::list<int> sportsPlaces = { 2,6,10 };
+	if (list_contains(sportsPlaces, current_player_place)) return "Sports";
 
-	if (current_player_place == 3) return "Rock";
-	if (current_player_place == 7) return "Rock";
-	if (current_player_place == 11) return "Rock";
+	std::list<int> rockPlaces = { 3,7,11 };
+	if (list_contains(rockPlaces, current_player_place)) return "Rock";
 
 	return "Rock";
 }
