@@ -57,9 +57,5 @@ std::string QuestionDeck::ask_question(std::string current_category)
 		question = rockQuestions_.front();
 		rockQuestions_.pop_front();
 	}
-
-	if (!question.empty())
-		std::cout << question << std::endl;
-
 	return question;
 }

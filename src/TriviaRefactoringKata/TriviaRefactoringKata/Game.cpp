@@ -73,7 +73,9 @@ void Game::roll(int roll)
 void Game::askQuestion()
 {
 	auto current_category = currentCategory();
-	deck.ask_question(current_category);
+	auto question = deck.ask_question(current_category);
+	if (!question.empty())
+		std::cout << question << std::endl;
 }
 
 string Game::currentCategory()
