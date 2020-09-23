@@ -10,7 +10,7 @@ static std::string create_question(int index, std::string category)
 	return oss.str();
 }
 
-static bool places_contains(std::unordered_set<int>& places, int value)
+static bool places_contains(const std::unordered_set<int>& places, int value)
 {
 	return places.find(value) != places.end();
 }
@@ -26,7 +26,7 @@ void QuestionDeck::fill_questions()
 	}
 }
 
-std::string QuestionDeck::find_category_for(int place)
+std::string QuestionDeck::find_category_for(int place) const
 {
 	if (places_contains(popPlaces_, place)) return "Pop";
 	if (places_contains(sciencePlaces_, place)) return "Science";
