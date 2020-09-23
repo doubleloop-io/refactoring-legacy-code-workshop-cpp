@@ -1,6 +1,7 @@
 ﻿#include "QuestionDeck.h"
 #include <sstream>
 #include <iostream>
+#include <unordered_set>
 
 static std::string create_question(int index, std::string category)
 {
@@ -9,9 +10,9 @@ static std::string create_question(int index, std::string category)
 	return oss.str();
 }
 
-static bool list_contains(std::list<int>& list, int value)
+static bool places_contains(std::unordered_set<int>& places, int value)
 {
-	return  std::find(list.begin(), list.end(), value) != list.end();
+	return places.find(value) != places.end();
 }
 
 void QuestionDeck::fill_questions()
@@ -25,20 +26,12 @@ void QuestionDeck::fill_questions()
 	}
 }
 
-std::string QuestionDeck::current_category(int current_player_place)
+std::string QuestionDeck::find_category_for(int place)
 {
-	std::list<int> popPlaces = { 0,4,8 };
-	if (list_contains(popPlaces, current_player_place)) return "Pop";
-
-	std::list<int> sciencePlaces = { 1,5,9 };
-	if (list_contains(sciencePlaces, current_player_place)) return "Science";
-
-	std::list<int> sportsPlaces = { 2,6,10 };
-	if (list_contains(sportsPlaces, current_player_place)) return "Sports";
-
-	std::list<int> rockPlaces = { 3,7,11 };
-	if (list_contains(rockPlaces, current_player_place)) return "Rock";
-
+	if (places_contains(popPlaces_, place)) return "Pop";
+	if (places_contains(sciencePlaces_, place)) return "Science";
+	if (places_contains(sportsPlaces_, place)) return "Sports";
+	if (places_contains(rockPlaces_, place)) return "Rock";
 	return "Rock";
 }
 

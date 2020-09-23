@@ -10,7 +10,7 @@ TEST_P(CurrentCategoryFixture, LookupCategoryByPlace)
 
 	QuestionDeck deck;
 
-	ASSERT_EQ(expected, deck.current_category(place));
+	ASSERT_EQ(expected, deck.find_category_for(place));
 }
 
 INSTANTIATE_TEST_CASE_P(QuestionDeckTests, CurrentCategoryFixture, ::testing::Values(
@@ -31,11 +31,11 @@ INSTANTIATE_TEST_CASE_P(QuestionDeckTests, CurrentCategoryFixture, ::testing::Va
 TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 {
 	QuestionDeck deck;
-	EXPECT_EQ("Rock", deck.current_category(-1));
-	EXPECT_EQ("Rock", deck.current_category(-123));
-	EXPECT_EQ("Rock", deck.current_category(12));
-	EXPECT_EQ("Rock", deck.current_category(123));
-	EXPECT_EQ("Rock", deck.current_category(INT32_MAX));
+	EXPECT_EQ("Rock", deck.find_category_for(-1));
+	EXPECT_EQ("Rock", deck.find_category_for(-123));
+	EXPECT_EQ("Rock", deck.find_category_for(12));
+	EXPECT_EQ("Rock", deck.find_category_for(123));
+	EXPECT_EQ("Rock", deck.find_category_for(INT32_MAX));
 }
 
 // test unknown category
