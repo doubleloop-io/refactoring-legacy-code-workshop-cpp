@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <list>
 #include <unordered_set>
+#include <string>
 
 class QuestionDeck
 {
@@ -19,4 +20,19 @@ private:
 	const std::unordered_set<int> sciencePlaces_ = { 1,5,9 };
 	const std::unordered_set<int> sportsPlaces_ = { 2,6,10 };
 	const std::unordered_set<int> rockPlaces_ = { 3,7,11 };
+};
+
+class PlaceNotFoundException : public std::exception
+{
+public:
+	PlaceNotFoundException(int place)
+		: msg_("Not found place: " + std::to_string(place)) {}
+
+private:
+	std::string msg_;
+
+	char const* what() const override
+	{
+		return  msg_.c_str();
+	}
 };

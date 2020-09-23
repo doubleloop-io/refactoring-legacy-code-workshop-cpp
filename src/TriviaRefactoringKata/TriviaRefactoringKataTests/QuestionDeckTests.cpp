@@ -31,14 +31,12 @@ INSTANTIATE_TEST_CASE_P(QuestionDeckTests, CurrentCategoryFixture, ::testing::Va
 TEST(QuestionDeckTests, CategoryForOutOfBoardPlace)
 {
 	QuestionDeck deck;
-	EXPECT_EQ("Rock", deck.find_category_for(-1));
-	EXPECT_EQ("Rock", deck.find_category_for(-123));
-	EXPECT_EQ("Rock", deck.find_category_for(12));
-	EXPECT_EQ("Rock", deck.find_category_for(123));
-	EXPECT_EQ("Rock", deck.find_category_for(INT32_MAX));
+	EXPECT_THROW(deck.find_category_for(-1), PlaceNotFoundException);
+	EXPECT_THROW(deck.find_category_for(-123), PlaceNotFoundException);
+	EXPECT_THROW(deck.find_category_for(12), PlaceNotFoundException);
+	EXPECT_THROW(deck.find_category_for(123), PlaceNotFoundException);
+	EXPECT_THROW(deck.find_category_for(INT32_MAX), PlaceNotFoundException);
 }
-
-// test unknown category
 
 TEST(QuestionDeckTests, OneQuestionForCategory)
 {

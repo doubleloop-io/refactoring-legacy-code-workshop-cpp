@@ -40,7 +40,7 @@ std::string QuestionDeck::find_category_for(int place) const
 	if (places_contains(sportsPlaces_, place)) return "Sports";
 	if (places_contains(rockPlaces_, place)) return "Rock";
 
-	return "Rock";
+	throw PlaceNotFoundException(place);
 }
 
 std::string QuestionDeck::fetch_next_question(std::string category)
